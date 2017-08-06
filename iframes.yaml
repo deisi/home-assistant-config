@@ -1,0 +1,15 @@
+musikbox:
+  title: 'MusikBox'
+  url: 'http://serv:6680/musicbox_webclient/index.html#home'
+rapi3:
+  title: 'TV'
+  url: 'http://rapi3:8080'
+grafana:
+  title: 'Grafana'
+  url: 'http://serv:3000/?orgId=1'
+hts:
+  title: 'hts'
+  url: 'http://rapi4:9981/extjs.html'
+n2yo:
+  title: 'n2yo'
+  url: 'http://www.n2yo.com/space-station/'

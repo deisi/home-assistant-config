@@ -1,0 +1,421 @@
+- alias: Home Entered
+  trigger:
+    platform: state
+    entity_id: group.people
+    to: 'home'
+  action:
+    service: script.turn_on
+    entity_id: script.home_entered
+
+- alias: Home Left
+  trigger:
+    platform: state
+    entity_id: group.people
+    to: 'not_home'
+  action:
+    service: script.turn_on
+    entity_id: script.home_left
+
+- alias: Beamer On
+  trigger:
+    platform : state
+    entity_id: switch.beamer
+    to: "on"
+  action:
+    - service: script.turn_on
+      entity_id: script.fehrnsehn
+
+- alias: Movement Detected
+  trigger:
+    platform: state
+    entity_id: binary_sensor.multisensor_sensor
+    to: "on"
+  condition:
+    - condition: state
+      entity_id: group.people
+      state: "not_home"
+  action:
+    - service: script.turn_on
+      entity_id: script.movement_detected
+
+- alias: TV beats Radio
+  trigger:
+    platform: state
+    entity_id: media_player.kodi_rapi3
+    to: 'playing'
+  action:
+    - service: media_player.media_pause
+      entity_id: media_player.mpd
+    - service: media_player.media_pause
+      entity_id: media_player.spotify
+
+- alias: Wake up 0600
+  trigger:
+    - platform: time
+      hours: 6
+      minutes: 0
+      seconds: 0
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - thu
+    - condition: state
+      entity_id: group.people
+      state: "home"
+  action:
+    - service: scene.turn_on
+      entity_id: scene.morning
+    - service: script.turn_on
+      entity_id: script.wakeup
+    - service: script.turn_on
+      entity_id: script.radio_music
+
+- alias: Wake up 0658
+  trigger:
+    platform: time
+    hours: 6
+    minutes: 58
+    seconds: 0
+  condition:
+    - condition: state
+      entity_id: group.people
+      state: home
+    - condition: time
+      weekday:
+      - wed
+      - fri
+  action:
+    - service: script.turn_on
+      entity_id: script.wakeup
+    - service: scene.turn_on
+      entity_id: scene.morning
+    - service: script.turn_on
+      entity_id: script.radio_music
+
+- alias: Music Playing
+  trigger:
+  - platform: state
+    entity_id: media_player.kodi_rapi3
+    to: 'playing'
+  - platform: state
+    entity_id: media_player.mpd
+    to: 'playing'
+  - platform: state
+    entity_id: media_player.spotify
+    to: 'playing'
+  action:
+    service: switch.turn_on
+    entity_id: switch.anlage_switch
+
+#- alias: Music Playing 2
+#  trigger:
+#    platform: state
+#    entity_id: media_player.spotify
+#    to: 'playing'
+#  condition:
+#    - condition: template
+#      value_template: >
+#        {% if states.media_player.spotify.attributes.source == 'Maltes Echo Dot' %}
+#          {{'true'}}
+#        {% else %}
+#          {{'false'}}
+#        {% endif %}
+#  action:
+#    service: switch.turn_on
+#    entity_id: switch.anlage_switch
+
+- alias: Train to mainz delayed
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.delay_to_mainz
+    above: "1"
+    below: "5"
+  action:
+    - service: notify.notify
+      data_template:
+        message: "Train to Mainz is {{ trigger.to_state.state }} min delayed"
+    - service: homeassistant.turn_on
+      entity_id: light.status_light
+      data:
+        brightness: 150
+        rgb_color: [125, 125, 0]
+
+- alias: Train to mainz delayed 1
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.delay_to_mainz
+    above: "5"
+    below: "10"
+  action:
+    - service: notify.notify
+      data_template:
+        message: "Train to Mainz is {{ trigger.to_state.state }} min delayed"
+    - service: homeassistant.turn_on
+      entity_id: light.status_light
+      data:
+        brightness: 150
+        rgb_color: [125, 20, 0]
+
+- alias: Train to mainz delayed 2
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.delay_to_mainz
+    above: "10"
+    below: "30"
+  action:
+    - service: notify.notify
+      data_template:
+        message: "Train to Mainz is {{ trigger.to_state.state }} min delayed"
+    - service: homeassistant.turn_on
+      entity_id: light.status_light
+      data:
+        brightness: 150
+        rgb_color: [125, 0, 0]
+
+- alias: Train to mainz delayed 3
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.delay_to_mainz
+    above: "30"
+  action:
+    - service: notify.notify
+      data_template:
+        message: "Train to Mainz is {{ trigger.to_state.state }} min delayed"
+    - service: homeassistant.turn_on
+      entity_id: light.status_light
+      data:
+        brightness: 150
+        rgb_color: [255, 0, 0]
+
+- alias: Train to mainz on Time again
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.delay_to_mainz
+    below: "1"
+  action:
+    service: homeassistant.turn_off
+    entity_id: light.status_light
+
+- alias: Train to Saulheim delayed
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.delay_to_saulheim
+    above: "1"
+    below: "5"
+  action:
+    - service: notify.notify
+      data_template:
+        message: "Train to Saulheim is {{ trigger.to_state.state }} min delayed"
+
+- alias: Train to Saulheim delayed 1
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.delay_to_saulheim
+    above: "5"
+    below: "10"
+  action:
+    - service: notify.notify
+      data_template:
+        message: "Train to Saulheim is {{ trigger.to_state.state }} min delayed"
+
+- alias: Train to Saulheim delayed 2
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.delay_to_saulheim
+    above: "10"
+    below: "30"
+  action:
+    - service: notify.notify
+      data_template:
+        message: "Train to Saulheim is {{ trigger.to_state.state }} min delayed"
+
+- alias: Train to Saulheim delayed 3
+  hide_entity: True
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.delay_to_saulheim
+    above: "30"
+  action:
+    - service: notify.notify
+      data_template:
+        message: "Train to Saulheim is {{ trigger.to_state.state }} min delayed"
+
+- alias: Washing machine Leaking
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.everspring_st812_flood_detector_flood
+    above: 100
+  action:
+    service: notify.superha
+    data_template:
+      message: "Washing machine Leaking"
+
+- alias: Update notifications
+  hide_entity: True
+  trigger:
+    - platform: state
+      entity_id: updater.updater
+  action:
+    service: notify.notify
+    data:
+      message: 'There is a new Home Assistant release available.'
+
+### Key stroke automations using keyboard remote
+- alias: Keyboard All light on
+  hide_entity: True
+  trigger:
+    platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      key_code: 107
+  action:
+    service: homeassistant.turn_on
+    entity_id: group.licht
+
+- alias: Keyboard All off
+  hide_entity: True
+  trigger:
+    platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      key_code: 110
+  action:
+    - service: media_player.media_pause
+      entity_id: group.player
+    - service: switch.turn_off
+      entity_id: switch.anlage_switch
+    - service: switch.turn_off
+      entity_id: switch.fluxer
+    - service: light.turn_off
+      entity_id: group.minimi
+
+- alias: Keyboard Hifi on
+  hide_entity: True
+  trigger:
+    platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      key_code: 108
+  action:
+    service: switch.turn_on
+    entity_id: switch.anlage_switch
+
+- alias: Keyboard Hifi off
+  hide_entity: True
+  trigger:
+    platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      key_code: 109
+  action:
+    - service: switch.turn_off
+      entity_id: switch.anlage_switch
+    - service: media_player.media_pause
+      entity_id: media_player.mpd
+
+- alias: Keyboard play 1live
+  hide_entity: True
+  trigger:
+    platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      key_code: 102
+  action:
+    service: media_player.play_media
+    data:
+      entity_id: media_player.mpd
+      media_content_type: playlist
+      media_content_id: 1live
+
+- alias: Keyboard play wdr2
+  hide_entity: True
+  trigger:
+    platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      key_code: 103
+  action:
+    service: media_player.play_media
+    data:
+      entity_id: media_player.mpd
+      media_content_type: playlist
+      media_content_id: wdr2
+
+- alias: Keyboard play wdr5
+  hide_entity: True
+  trigger:
+    platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      key_code: 104
+  action:
+    service: media_player.play_media
+    data:
+      entity_id: media_player.mpd
+      media_content_type: playlist
+      media_content_id: wdr5
+
+- alias: keyboard media player raise volume
+  hide_entity: True
+  trigger:
+    platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      key_code: 78
+  action:
+    service: media_player.volume_up
+    entity_id: media_player.mpd
+
+- alias: keyboard media player lower volume
+  hide_entity: True
+  trigger:
+    platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      key_code: 74
+  action:
+    service: media_player.volume_down
+    entity_id: media_player.mpd
+
+- alias: keyboard media player next track
+  hide_entity: True
+  trigger:
+    platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      key_code: 15
+  action:
+    service: media_player.media_next_track
+    entity_id: media_player.mpd
+
+- alias: keyboard media player previous track
+  hide_entity: True
+  trigger:
+    platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      key_code: 98
+  action:
+    service: media_player.media_previous_track
+    entity_id: media_player.mpd
+
+- alias: keyboard media pause
+  hide_entity: True
+  trigger:
+    platform: event
+    event_type: keyboard_remote_command_received
+    event_data:
+      key_code: 55
+  action:
+    service: media_player.media_pause
+    entity_id: media_player.mpd

@@ -1,0 +1,22 @@
+- name: MPIP
+  latitude: !secret ha_work_latitude
+  longitude: !secret ha_work_longitude
+  radius: 350
+  icon: mdi:work
+
+- name: Home
+  latitude: !secret ha_latitude
+  longitude: !secret ha_longitude
+  radius: 200
+  icon: mdi:home
+
+- name: Scool
+  latitude: !secret ha_scool_latitude
+  longitude: !secret ha_scool_longitude
+  radius: 350
+  icon: mdi:school
+
+- name: Mo
+  latitude: !secret ha_mo_latitude
+  longitude: !secret ha_mo_longitude
+  radius: 100

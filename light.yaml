@@ -1,0 +1,11 @@
+- platform: hue
+  host: 172.16.1.103
+  allow_unreachable: true
+
+- platform: blinksticklight
+  serial: BS006032-3.0
+  name: Status light
+
+- platform: osramlightify
+  host: 172.16.1.82
+  allow_lightify_groups: true

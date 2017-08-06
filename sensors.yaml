@@ -1,0 +1,325 @@
+#- platform: onewire
+#  #names: rapi4
+#  scan_interval : 900
+
+#- platform: dht
+#  scan_interval : 900 
+#  sensor: DHT11
+#  pin: 27
+#  name: Living Room
+#  monitored_conditions:
+#    - humidity
+##    - temperature
+
+- platform: darksky
+  api_key: !secret ha_darksky
+  monitored_conditions:
+    - temperature
+    - apparent_temperature
+    - dew_point
+    - wind_speed
+    - humidity
+    - pressure
+
+- platform: deutsche_bahn
+  from: Saulheim
+  to: Mainz
+  scan_interval : 900
+
+- platform: deutsche_bahn
+  from: Mainz
+  to: Saulheim
+  scan_interval : 900
+
+- platform: speedtest
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+- platform: mqtt
+  state_topic: "bad/temperature_one"
+  name: "Temperature Bath"
+  qos: 0
+  unit_of_measurement: "°C"
+  #value_template: '{{ value.x }}'
+
+- platform: mqtt
+  state_topic: "bad/humidity"
+  name: "Humidity Bath"
+  qos: 0
+  unit_of_measurement: "%"
+  #value_template: '{{ value.x }}'
+
+#- platform: fritz
+#  host: 172.16.1.1
+  
+- platform: template
+  sensors:
+    delay_to_mainz:
+      friendly_name: 'Delay to Mainz'
+      value_template: '{{states.sensor.saulheim_to_mainz.attributes.delay | int}}'
+      unit_of_measurement: 'min'
+
+- platform: template
+  sensors:
+    delay_to_saulheim:
+      friendly_name: 'Delay to Saulheim'
+      value_template: '{{states.sensor.mainz_to_saulheim.attributes.delay | int}}'
+      unit_of_measurement: 'min'
+
+#- platform: template
+#  sensors:
+#    delta_temp:
+#      friendly_name: 'Temperature difference to outside'
+#      value_template: >-
+#        {{ "%+.1f"|format(states.sensor["280000064b48ec"].state | float - states.sensor.dark_sky_temperature.state | float) }}
+#      unit_of_measurement: '°C'
+
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /
+    - type: memory_free
+    - type: load_5m
+    - type: since_last_boot
+  scan_interval : 900
+
+#- platform: statistics
+#  entity_id: sensor.280000064b48ec
+#  sampling_size: 100
+
+- platform: statistics
+  entity_id: binary_sensor.multisensor_sensor
+  name: bewegungssensor_stats
+
+- platform: snmp
+  host: serv
+  name: serv_load
+  community: read_only_user
+  baseoid: 1.3.6.1.4.1.2021.10.1.3.1
+  unit_of_measurement: 'load'
+  scan_interval : 900
+
+- platform: snmp
+  host: serv
+  name: serv_uptime
+  community: read_only_user
+  baseoid: 1.3.6.1.2.1.25.1.1.0
+  unit_of_measurement: 'cs'
+  scan_interval : 900
+
+- platform: snmp
+  host: serv
+  name: serv_rootfree
+  community: read_only_user
+  baseoid: .1.3.6.1.4.1.2021.9.1.7.1
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: serv
+  name: serv_volfree
+  community: read_only_user
+  baseoid: .1.3.6.1.4.1.2021.9.1.7.2
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: serv
+  name: serv_homefree
+  community: read_only_user
+  baseoid: .1.3.6.1.4.1.2021.9.1.7.3
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: serv
+  name: serv_memused
+  community: read_only_user
+  baseoid: .1.3.6.1.4.1.2021.4.6.0
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: serv
+  name: serv_memfree
+  community: read_only_user
+  baseoid: .1.3.6.1.4.1.2021.4.11.0
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: serv
+  name: serv_memshared
+  community: read_only_user
+  baseoid: .1.3.6.1.4.1.2021.4.13.0
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: serv
+  name: serv_membuffered
+  community: read_only_user
+  baseoid: .1.3.6.1.4.1.2021.4.14.0
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: serv
+  name: serv_memcached
+  community: read_only_user
+  baseoid: .1.3.6.1.4.1.2021.4.15.0
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: rapi3
+  name: rapi3_load
+  community: secret
+  baseoid: 1.3.6.1.4.1.2021.10.1.3.1
+  unit_of_measurement: 'load'
+  scan_interval : 900
+
+- platform: snmp
+  host: rapi3
+  name: rapi3_uptime
+  community: secret
+  baseoid: 1.3.6.1.2.1.25.1.1.0
+  units_of_measurement: 'cs'
+  scan_interval : 900
+
+- platform: snmp
+  host: rapi3
+  name: rapi3_memfree
+  community: secret
+  baseoid: .1.3.6.1.4.1.2021.4.11.0
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: rapi3
+  name: rapi3_membuffered
+  community: secret
+  baseoid: .1.3.6.1.4.1.2021.4.14.0
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: rapi3
+  name: rapi3_memcached
+  community: secret
+  baseoid: .1.3.6.1.4.1.2021.4.15.0
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: deisi
+  name: deisi_load
+  community: public
+  baseoid: 1.3.6.1.4.1.2021.10.1.3.1
+  unit_of_measurement: 'load'
+  scan_interval : 900
+
+- platform: snmp
+  host: deisi
+  name: deisi_uptime
+  community: public
+  baseoid: 1.3.6.1.2.1.25.1.1.0
+  unit_of_measurement: 'cs'
+  scan_interval : 900
+
+- platform: snmp
+  host: deisi
+  name: deisi_rootfree
+  community: public
+  baseoid: .1.3.6.1.4.1.2021.9.1.7.1
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: deisi
+  name: deisi_datafree
+  community: public
+  baseoid: .1.3.6.1.4.1.2021.9.1.7.2
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: deisi
+  name: deisi_memused
+  community: public
+  baseoid: .1.3.6.1.4.1.2021.4.6.0
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: deisi
+  name: deisi_memfree
+  community: public
+  baseoid: .1.3.6.1.4.1.2021.4.11.0
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: deisi
+  name: deisi_memshared
+  community: public
+  baseoid: .1.3.6.1.4.1.2021.4.13.0
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: deisi
+  name: deisi_membuffered
+  community: public
+  baseoid: .1.3.6.1.4.1.2021.4.14.0
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: snmp
+  host: deisi
+  name: deisi_memcached
+  community: public
+  baseoid: .1.3.6.1.4.1.2021.4.15.0
+  unit_of_measurement: 'kB'
+  scan_interval : 900
+
+- platform: template
+  sensors:
+    rapi3_uptime_days:
+      value_template: '{{ states.sensor.rapi3_uptime.state | multiply(0.0000001157) | round(1) }}'
+      friendly_name: 'Rapi3 Uptime'
+      unit_of_measurement: 'days'
+#    rapi3_memfree_real:
+#      friendly_name: 'Free Memory'
+#      icon: 'mdi:memory'
+#      value_template: ''
+    serv_uptime_days:
+      value_template: '{{ states.sensor.serv_uptime.state | multiply(0.0000001157) | round(1) }}'
+      friendly_name: 'Serv Uptime'
+      unit_of_measurement: 'days'
+    serv_rootfree_gb:
+      value_template: '{{ states.sensor.serv_rootfree.state | multiply(1/(1024*1024)) | round(1) }}'
+      friendly_name: 'Serv free /'
+      unit_of_measurement: 'GB'
+    serv_volfree_gb:
+      value_template: '{{ states.sensor.serv_volfree.state | multiply(1/(1024*1024)) | round(1) }}'
+      friendly_name: 'Serv free vol'
+      unit_of_measurement: 'GB'
+    serv_homefree_gb:
+      value_template: '{{ states.sensor.serv_homefree.state | multiply(1/(1024*1024)) | round(1) }}'
+      friendly_name: 'Serv free home'
+      unit_of_measurement: 'GB'
+    deisi_uptime_days:
+      value_template: '{{ states.sensor.deisi_uptime.state | multiply(0.0000001157) | round(1) }}'
+      friendly_name: 'Deisi Uptime'
+      unit_of_measurement: 'days'
+    deisi_rootfree_gb:
+      value_template: '{{ states.sensor.deisi_rootfree.state | multiply(1/(1024*1024)) | round(1) }}'
+      friendly_name: 'Deisi free root'
+      unit_of_measurement: 'GB'
+    deisi_datafree_gb:
+      value_template: '{{ states.sensor.deisi_datafree.state | multiply(1/(1024*1024)) | round(1) }}'
+      friendly_name: 'Deisi free data'
+      unit_of_measurement: 'GB'

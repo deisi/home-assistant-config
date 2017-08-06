@@ -1,0 +1,15 @@
+didi_herolte:
+  hide_if_away: false
+  mac:
+  name: didi
+  picture:
+  track: true
+  vendor:
+
+malte_kminiltexx:
+  hide_if_away: false
+  mac:
+  name: malte
+  picture:
+  track: true
+  vendor:

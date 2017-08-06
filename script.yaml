@@ -1,0 +1,147 @@
+home_entered:
+  alias: Home Entered
+  sequence:
+    - service: switch.turn_on
+      entity_id: switch.anlage_switch
+    - service: switch.turn_on
+      entity_id: switch.fluxer
+    - condition: state
+      entity_id: group.licht
+      state: "off"
+    - service: light.turn_on
+      entity_id: group.minimi
+
+home_left:
+  alias: Home Left
+  sequence:
+    - service: switch.turn_off
+      entity_id: switch.fluxer
+    - service: switch.turn_off
+      entity_id: switch.anlage_switch
+    - condition: state
+      entity_id: group.licht
+      state: "on"
+    - service: light.turn_off
+      entity_id: group.minimi
+
+fehrnsehn:
+  alias: Fehrnsehn
+  sequence:
+    - service: switch.turn_off
+      entity_id: switch.fluxer
+    - service: light.turn_off
+      entity_id: light.wohnzimmer
+    - service: switch.turn_on
+      entity_id: switch.anlage_switch
+    - condition: state
+      entity_id: switch.beamer
+      state: "off"
+    - service: switch.turn_on
+      entity_id: switch.beamer
+
+movement_detected:
+  alias: Movement Detected
+  sequence:
+    - service: notify.notify
+      data_template:
+        message: "Movement detected."
+    - condition: state
+      entity_id: group.licht
+      state: "off"
+    - condition: state
+      entity_id: sun.sun
+      state: "below_horizon"
+    - service: light.turn_on
+      entity_id: group.minimi
+    - delay: 06:00
+
+sleep:
+  alias: Aus
+  sequence:
+    - alias: Pause media player
+      service: media_player.media_pause
+      entity_id: group.player
+    - alias: Turn off HIFI
+      service: switch.turn_off
+      entity_id: switch.anlage_switch
+    - alias: Turn off Fluxer
+      service: switch.turn_off
+      entity_id: switch.fluxer
+    - alias: Turn off light
+      service: light.turn_off
+
+radio_music:
+  alias: Play Radio
+  sequence:
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.mpd
+      media_content_type: playlist
+      media_content_id: radio1
+
+wakeup: 
+  alias: Aufwecken
+  sequence:
+    - alias: Light on
+      service: light.turn_on
+      data:
+        entity_id: group.maximi
+        brightness: 1
+    - delay:
+        seconds: 10
+    - alias: Set temperature
+      service: light.turn_on
+      data:
+        entity_id: group.maximi
+        kelvin: 5000
+    - delay:
+        seconds: 10
+    - alias: Transition lights
+      service: light.turn_on
+      data:
+        entity_id: group.maximi
+        transition: 900
+        brightness: 255
+        kelvin: 5000
+
+random_color:
+  sequence:
+  - service: switch.turn_off
+    entity_id: switch.fluxer
+  - service: light.turn_on
+    data_template:
+      entity_id: light.lightify
+      color_name: !include random_color.yaml
+
+random_color1:
+  sequence:
+  - service: switch.turn_off
+    entity_id: switch.fluxer
+  - service: light.turn_on
+    data_template:
+      entity_id: light.beamer
+      color_name: !include random_color.yaml
+  - service: light.turn_on
+    data_template:
+      entity_id: light.sofa0
+      color_name: !include random_color.yaml
+  - service: light.turn_on
+    data_template:
+      entity_id: light.sofa1
+      color_name: !include random_color.yaml
+  - service: light.turn_on
+    data_template:
+      entity_id: light.kueche0
+      color_name: !include random_color.yaml
+  - service: light.turn_on
+    data_template:
+      entity_id: light.kueche1
+      color_name: !include random_color.yaml
+  - service: light.turn_on
+    data_template:
+      entity_id: light.schnapsschrank0
+      color_name: !include random_color.yaml
+  - service: light.turn_on
+    data_template:
+      entity_id: light.schnapsschrank1
+      color_name: !include random_color.yaml

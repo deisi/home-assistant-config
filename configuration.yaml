@@ -1,0 +1,148 @@
+homeassistant:
+  name: serv
+  latitude: !secret ha_latitude
+  longitude: !secret ha_longitude
+  time_zone: Europe/Berlin
+  elevation: 141
+  customize: !include customize.yaml
+
+config:
+
+logger:
+  default: warning
+  logs:
+    homeassistant.components.mqtt: error
+    homeassistant.components.switch.beamer: critical
+    homeassistant.components.sensor.snmp: critical
+    homeassistant.components.light.osramlightify: error
+
+recorder:
+  purge_days: 7
+  db_url: !secret ha_db_url
+  include:
+    domains:
+      - device_tracker
+      - binary_sensor
+      - light
+      - media_player
+      - sensor
+      - switch
+
+influxdb:
+  host: serv
+  username: home-assistant
+  password: !secret ha_influx_pw
+  database: home_assistant
+
+frontend:
+discovery:
+history:
+conversation:
+sun:
+updater:
+  include_used_components: true
+http:
+  api_password: !secret ha_password
+  server_port: 80
+  trusted_networks:
+    - 172.16.1.0/24
+    - ::1
+    - 127.0.0.1
+  #base_url: !secret ha_base_url
+
+logbook:
+
+zwave:
+  usb_path: /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
+  debug: true
+  #polling_interval: 30000
+  
+#mysensors:
+#  gateways:
+#    - device: '/dev/mySensorGW'
+#      persistence_file: '/home/homeassistant/.homeassistant/mysensors0.json'
+#      baud_rate: 115200
+#  version: 2.0
+#  persistence: false
+
+emulated_hue:
+  expose_by_default: false
+
+switch: !include switch.yaml
+
+keyboard_remote:
+  device_descriptor: '/dev/input/by-id/usb-MOSART_Semi._2.4G_Keyboard_Mouse-event-kbd'
+
+#telegram_bot:
+#  - platform: polling
+#    api_key: !secret ha_telegram
+#    allowed_chat_ids:
+#      - !secret ha_chat_id_1
+#      - !secret ha_chat_id_2
+#
+#notify:
+#  platform: telegram
+#  chat_id: !secret ha_chat_id_1
+#
+#notify 2:
+#  name: superha
+#  platform: telegram
+#  chat_id: !secret ha_chat_id_2
+
+mqtt:
+  broker: deisi.deiseroth.de
+  certificate: /etc/ssl/certs/ca-certificates.crt
+  port: 8883
+  client_id: home-assistant-rapi4
+  keepalive: 60
+  username: !secret ha_mqtt_user
+  password: !secret ha_mqtt_pw
+
+mqtt_eventstream:
+  publish_topic: master/topic
+  subscribe_topic: slaves/#
+
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 200
+  
+sensor: !include sensors.yaml
+
+media_player:
+- platform: kodi
+  host: rapi3.local
+  port: 8080
+  name: kodi_rapi3
+- platform: mpd
+  host: serv
+  port: 6600
+  location: living_room
+- platform: snapcast
+  host: serv
+- platform: spotify
+  client_id: !secret ha_spotify_client_id
+  client_secret: !secret ha_spotify_client_secret
+#- platform: acer_projector
+#  filename: /dev/beamer
+#  name: Beamer
+
+light: !include light.yaml
+
+group: !include group.yaml
+
+script: !include script.yaml
+
+scene: !include scenes.yaml
+
+zone: !include zone.yaml
+
+ifttt:
+  key: !secret ha_ifttt
+
+device_sun_light_trigger:
+  light_group: group.minimi
+  device_group: group.people
+
+automation: !include automation.yaml
+
+panel_iframe: !include iframes.yaml

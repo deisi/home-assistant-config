@@ -1,0 +1,14 @@
+secrets.yaml
+.uuid
+OZW_Log.txt
+deps*
+emulated_hue_ids.json
+home-assistant.log
+phue.conf
+pyozw.sqlite
+zwcfg_*.xml
+zwscene.xml
+.configuration.yaml.swp
+beamer
+*~
+__*

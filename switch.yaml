@@ -1,0 +1,40 @@
+#- platform: acer_projector
+#  filename: /home/homeassistant/beamer
+#  name: Beamer
+#- platform: pulseaudio_loopback
+#  host: serv
+#  sink_name: fifo_output
+#  source_name: kodi.monitor
+#  name: kodi > snapcast
+#- platform: pulseaudio_loopback
+#  host: serv
+#  sink_name: alsa_output.usb-0d8c_C-Media_USB_Headphone_Set-00.analog-stereo
+#  source_name: kodi.monitor
+#  name: kodi > HIFI
+- platform: flux
+  lights:
+    - light.beamer
+    - light.sofa0
+    - light.sofa1
+    - light.kueche0
+    - light.kueche1
+    - light.tisch0
+    - light.tisch1
+    - light.ofen0
+    - light.ofen1
+    - light.schnapsschrank0
+    - light.schnapsschrank1
+    - light.kueche2
+  name: Hans
+  start_time: '6:00'
+  stop_time: '23:00'
+  start_colortemp: 5000
+  sunset_colortemp: 3000
+  stop_colortemp: 1900
+  disable_brightness_adjust: True
+  mode: mired
+
+- platform: wake_on_lan
+  mac_address: "D0-50-99-32-5A-8D"
+  name: "Gaming PC"
+  host: "172.16.1.45"

@@ -1,0 +1,4 @@
+- name: Morning
+  entities:
+    media_player.mpd:
+      volume_level: 0.25

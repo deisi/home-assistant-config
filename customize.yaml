@@ -1,0 +1,107 @@
+sensor.anlage_energy:
+  icon: mdi:speaker
+  friendly_name: HIFI Energy
+sensor.anlage_power:
+  icon: mdi:speaker
+  friendly_name: HIFI Power
+sensor.humidity_bath:
+  icon: mdi:water-percent
+sensor.living_room_humidity:
+  icon: mdi:water-percent
+  friendly_name: Luftfeuchtigkeit
+sensor.weather_humidity:
+  icon: mdi:water-percent
+binary_sensor.multisensor_sensor:
+  friendly_name: Bewegung 
+sensor.multisensor_temperature:
+  friendly_name: Temperatur
+sensor.multisensor_luminance:
+  friendly_name: Helligkeit
+sensor.everspring_st812_flood_detector_flood:
+  friendly_name: Washing machine
+  icon: mdi:water
+sensor.280000064b48ec:
+  friendly_name: rapi4
+sensor.serv_rootfree_gb:
+  icon: mdi:harddisk
+sensor.serv_volfree_gb:
+  icon: mdi:harddisk
+sensor.serv_homefree_gb:
+  icon: mdi:harddisk
+sensor.deisi_rootfree_gb:
+  icon: mdi:harddisk
+sensor.deisi_datafree_gb:
+  icon: mdi:harddisk
+sensor.serv_uptime_days:
+  icon: mdi:clock
+sensor.deisi_uptime_days:
+  icon: mdi:clock
+sensor.rapi3_uptime_days:
+  icon: mdi:clock
+sensor.serv_load:
+  icon: mdi:chip
+sensor.deisi_load:
+  icon: mdi:chip
+sensor.rapi3_load:
+  icon: mdi:chip
+sensor.dark_sky_temperature:
+  friendly_name: Draußen
+binary_sensor.binary_sensor_1_4:
+  friendly_name: Balkontür
+
+media_player.mpd:
+  friendly_name: Musik Box
+  emulated_hue: true
+media_player.kodi_rapi3:
+  friendly_name: TV
+  emulated_hue: true
+media_player.spotify:
+  emulated_hue: true
+media_player.beamer:
+  emulated_hue: true
+
+scene.morning:
+  emulated_hue: true
+
+script.fehrnsehn:
+  emulated_hue: true
+script.random_color:
+  friendly_name: Zufällige Farbe Alle
+  emulated_hue: true
+script.random_color1:
+  friendly_name: Zufällige Farbe
+  emulated_hue: true
+script.sleep:
+  emulated_hue: true
+script.wakeup:
+  emulated_hue: true
+
+light.beamer:
+  friendly_name: Leinwand
+  emulated_hue: true
+light.esszimmer:
+  emulated_hue: true
+light.lightify:
+  emulated_hue: true
+light.ofen:
+  emulated_hue: true
+light.stehlampe:
+  emulated_hue: true
+light.wohnzimmer:
+  emulated_hue: true
+
+switch.hans:
+  emulated_hue: true
+switch.anlage_switch:
+  icon: mdi:speaker
+  emulated_hue: true
+  friendly_name: Anlage
+switch.gaming_pc:
+  emulated_hue: true
+
+group.kueche:
+  emulated_hue: true
+group.licht:
+  emulated_hue: true
+group.schalter:
+  emulated_hue: false

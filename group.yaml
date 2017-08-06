@@ -1,0 +1,195 @@
+scripts:
+  name: Scripte
+  entities:
+    - script.home_entered
+    - script.home_left
+    - script.movement_detected
+    - script.radio_music
+    - script.random_color
+    - script.random_color1
+    - script.fehrnsehn
+    - script.wakeup
+automations:
+  name: Automations
+  entities:
+    - automation.home_entered
+    - automation.home_left
+    - automation.beamer_on
+    - automation.movement_detected
+    - automation.music_playing
+    - automation.tv_beats_radio
+    - automation.wake_up_0600
+    - automation.wake_up_0658
+    - automation.washing_machine_leaking
+kueche:
+  name: Küche
+  entities:
+    - light.kuche
+    - light.kueche2
+licht:
+  name: Licht
+  entities:
+    - light.lightify
+    - light.beamer
+    - light.wohnzimmer
+    - light.ofen
+    - light.esszimmer
+    - light.kuche
+    - light.kueche2
+minimi:
+  entities:
+    - light.lightify
+    - light.kueche2
+maximi:
+  entities:
+    - light.sofa0
+    - light.sofa1
+    - light.beamer
+    - light.ofen0
+    - light.ofen1
+    - light.tisch0
+    - light.tisch1
+    - light.kueche0
+    - light.kueche1
+    - light.kueche2
+    - light.schnapsschrank0
+    - light.schnapsschrank1
+schalter:
+  name: Schalter
+  entities:
+    - light.lightify
+    - light.beamer
+    - light.wohnzimmer
+    - light.ofen
+    - light.esszimmer
+    - light.kueche
+    - switch.beamer
+    - switch.anlage_switch
+    - switch.fluxer
+    - switch.gaming_pc
+people:
+  - device_tracker.malte_kminiltexx
+  - device_tracker.didi_herolte
+player:
+  entities:
+    - media_player.mpd
+    - media_player.kodi_rapi3
+    - media_player.spotify
+outside:
+  name: Draußen
+  entities:
+    - sensor.delta_temp
+    - sensor.dark_sky_icon
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_dew_point
+    - sensor.dark_sky_pressure
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_cloud_coverage
+    - sensor.soil_moisture_sensor_in_p_3_0
+    - sensor.soil_moisture_sensor_in_p_3_1
+    - sensor.soil_moisture_sensor_in_p_3_2
+    - sensor.soil_moisture_sensor_in_p_3_3
+    - sensor.soil_moisture_sensor_in_p_3_7
+hud:
+  name: HUD
+  entities:
+    - sensor.dark_sky_temperature
+    - sensor.280000064b48ec
+    - sensor.multisensor_temperature
+    - sensor.temperature_bath
+    - sensor.multisensor_luminance
+rapi4:
+  - sensor.average_load
+  - sensor.ram_free
+  - sensor.disk_use_
+  - sensor.speedtest_download
+  - sensor.speedtest_upload
+  - sensor.speedtest_ping
+  - sensor.since_last_boot
+  - sensor.average_load_15m
+  - sensor.average_load_5m
+serv:
+  - sensor.serv_load
+  - sensor.serv_uptime_days
+  - sensor.serv_volfree_gb
+  - sensor.serv_homefree_gb
+  - sensor.serv_rootfree_gb
+rapi3:
+  - sensor.rapi3_load
+  - sensor.rapi3_uptime_days
+deisi:
+  - sensor.deisi_load
+  - sensor.deisi_uptime_days
+  - sensor.deisi_rootfree_gb
+  - sensor.deisi_datafree_gb
+wohnzimmer:
+  view: yes
+  name: Wohnzimmer
+  entities:
+    - group.licht
+    - light.bunt
+    - light.sofa0
+    - light.sofa1
+    - light.ofen0
+    - light.ofen1
+    - light.tisch0
+    - light.tisch1
+    - light.schnapsschrank0
+    - light.schnapsschrank1
+    - light.kueche0
+    - light.kueche1
+    - light.kueche2
+    - sensor.anlage_energy
+    - sensor.anlage_power
+    - switch.anlage_switch
+    - sensor.living_room_humidity
+    - sensor.280000064b48ec
+    - switch.beamer
+    - switch.hans
+    - switch.gaming_pc
+    - media_player.serv
+    - media_player.kodi_rapi3
+    - media_player.mpd
+    - sensor.bewegungssensor_stats_count
+    - binary_sensor.multisensor_sensor
+    - sensor.multisensor_luminance
+    - sensor.multisensor_temperature
+badezimmer:
+  view: yes
+  name: Badezimmer
+  entities:
+    - sensor.humidity_bath
+    - sensor.temperature_bath
+    - sensor.everspring_st812_flood_detector_flood
+    - media_player.rapi2
+servers:
+  view: yes
+  name: Servers
+  icon: mdi:server
+  entities:
+    - group.rapi4
+    - group.rapi3
+    - group.serv
+    - group.deisi
+aux:
+  view: yes
+  name: Auxilaries
+  entities:
+    - group.people
+    - group.automations
+    - group.outside
+    - media_player.serv
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.scripts
+    - group.sensors
+    - group.schalter
+    - group.hud
+    - media_player.mpd
+    - media_player.kodi_rapi3
+    - media_player.spotify
+    - media_player.beamer
