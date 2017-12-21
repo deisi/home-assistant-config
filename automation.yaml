@@ -49,18 +49,16 @@
     - service: media_player.media_pause
       entity_id: media_player.spotify
 
-- alias: Wake up 0600
+- alias: Wake up 0545
   trigger:
     - platform: time
-      hours: 6
-      minutes: 0
-      seconds: 0
+      hours: 5
+      minutes: 45
   condition:
     - condition: time
       weekday:
         - mon
         - tue
-        - thu
     - condition: state
       entity_id: group.people
       state: "home"
@@ -72,12 +70,11 @@
     - service: script.turn_on
       entity_id: script.radio_music
 
-- alias: Wake up 0658
+- alias: Wake up 0730
   trigger:
     platform: time
-    hours: 6
-    minutes: 58
-    seconds: 0
+    hours: 7
+    minutes: 28
   condition:
     - condition: state
       entity_id: group.people
@@ -85,6 +82,7 @@
     - condition: time
       weekday:
       - wed
+      - thu
       - fri
   action:
     - service: script.turn_on
@@ -270,6 +268,147 @@
     data:
       message: 'There is a new Home Assistant release available.'
 
+# Fix Kompensator and lightify state issue
+- alias: On Lightify turned off
+  hide_entity: True
+  trigger:
+    - platform: state
+      entity_id: light.lightify
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: switch.kompensator
+      state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.sofa0
+    - service: light.turn_off
+      entity_id: light.sofa1
+    - service: light.turn_off
+      entity_id: light.beamer
+    - service: light.turn_off
+      entity_id: light.ofen0
+    - service: light.turn_off
+      entity_id: light.ofen1
+    - service: light.turn_off
+      entity_id: light.tisch0
+    - service: light.turn_off
+      entity_id: light.tisch1
+    - service: light.turn_off
+      entity_id: light.kueche0
+    - service: light.turn_off
+      entity_id: light.kueche1
+    - service: light.turn_off
+      entity_id: light.schnapsschrank0
+    - service: light.turn_off
+      entity_id: light.schnapsschrank1
+
+- alias: On Lightify turne off Küche2
+  hide_entity: True
+  trigger:
+    - platform: state
+      entity_id: light.lightify
+      to: 'off'
+  action:
+    - service: light.turn_off
+      entity_id: light.kueche2
+
+- alias: On Bunt turned off
+  hide_entity: True
+  trigger:
+    - platform: state
+      entity_id: light.bunt
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: switch.kompensator
+      state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.sofa0
+    - service: light.turn_off
+      entity_id: light.sofa1
+    - service: light.turn_off
+      entity_id: light.beamer
+    - service: light.turn_off
+      entity_id: light.schnapsschrank0
+    - service: light.turn_off
+      entity_id: light.schnapsschrank1
+    - service: light.turn_off
+      entity_id: light.kueche0
+    - service: light.turn_off
+      entity_id: light.kueche1
+
+- alias: On Wohnzimmer turned off
+  hide_entity: True
+  trigger:
+    - platform: state
+      entity_id: light.wohnzimmer
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: switch.kompensator
+      state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.sofa0
+    - service: light.turn_off
+      entity_id: light.sofa1
+    - service: light.turn_off
+      entity_id: light.beamer
+
+- alias: On Ofen turned off
+  hide_entity: True
+  trigger:
+    - platform: state
+      entity_id: light.ofen
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: switch.kompensator
+      state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.ofen0
+    - service: light.turn_off
+      entity_id: light.ofen1
+
+- alias: On Esszimmer turned off
+  hide_entity: True
+  trigger:
+    - platform: state
+      entity_id: light.esszimmer
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: switch.kompensator
+      state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.tisch0
+    - service: light.turn_off
+      entity_id: light.tisch1
+    - service: light.turn_off
+      entity_id: light.schnapsschrank0
+    - service: light.turn_off
+      entity_id: light.schnapsschrank1
+
+- alias: On Küche turned off
+  hide_entity: True
+  trigger:
+    - platform: state
+      entity_id: light.kuche
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: switch.kompensator
+      state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.kueche0
+    - service: light.turn_off
+      entity_id: light.kueche1
+
 ### Key stroke automations using keyboard remote
 - alias: Keyboard All light on
   hide_entity: True
@@ -295,7 +434,7 @@
     - service: switch.turn_off
       entity_id: switch.anlage_switch
     - service: switch.turn_off
-      entity_id: switch.fluxer
+      entity_id: switch.kompensator
     - service: light.turn_off
       entity_id: group.minimi
 

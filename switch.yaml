@@ -25,7 +25,7 @@
     - light.schnapsschrank0
     - light.schnapsschrank1
     - light.kueche2
-  name: Hans
+  name: Kompensator
   start_time: '6:00'
   stop_time: '23:00'
   start_colortemp: 5000
@@ -38,3 +38,12 @@
   mac_address: "D0-50-99-32-5A-8D"
   name: "Gaming PC"
   host: "172.16.1.45"
+
+- platform: mqtt
+  name: Beamer
+  command_topic: "beamer_rev"
+  payload_on: "* 0 IR 001\r"
+  payload_off: "* 0 IR 002\r"
+  state_topic: "beamer_trs"
+  optimistic: true
+  #value_template: "{{ value }}"

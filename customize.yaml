@@ -90,13 +90,15 @@ light.stehlampe:
 light.wohnzimmer:
   emulated_hue: true
 
-switch.hans:
+switch.kompensator:
   emulated_hue: true
 switch.anlage_switch:
   icon: mdi:speaker
   emulated_hue: true
   friendly_name: Anlage
 switch.gaming_pc:
+  emulated_hue: true
+switch.beamer:
   emulated_hue: true
 
 group.kueche:

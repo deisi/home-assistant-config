@@ -57,15 +57,9 @@ maximi:
 schalter:
   name: Schalter
   entities:
-    - light.lightify
-    - light.beamer
-    - light.wohnzimmer
-    - light.ofen
-    - light.esszimmer
-    - light.kueche
     - switch.beamer
     - switch.anlage_switch
-    - switch.fluxer
+    - switch.kompensator
     - switch.gaming_pc
 people:
   - device_tracker.malte_kminiltexx
@@ -147,7 +141,7 @@ wohnzimmer:
     - sensor.living_room_humidity
     - sensor.280000064b48ec
     - switch.beamer
-    - switch.hans
+    - switch.kompensator
     - switch.gaming_pc
     - media_player.serv
     - media_player.kodi_rapi3
@@ -185,6 +179,7 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
+    - group.licht
     - group.scripts
     - group.sensors
     - group.schalter

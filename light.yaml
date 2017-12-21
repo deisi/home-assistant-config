@@ -1,5 +1,5 @@
 - platform: hue
-  host: 172.16.1.103
+  host: 172.16.1.29
   allow_unreachable: true
 
 - platform: blinksticklight
@@ -7,5 +7,5 @@
   name: Status light
 
 - platform: osramlightify
-  host: 172.16.1.82
+  host: 172.16.1.32
   allow_lightify_groups: true

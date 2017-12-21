@@ -12,3 +12,7 @@ zwscene.xml
 beamer
 *~
 __*
+ha.crt
+ha.key
+custom_components/media_player/mqtt_serial_media_player.py
+custom_components/switch/flux.py

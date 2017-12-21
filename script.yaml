@@ -4,7 +4,7 @@ home_entered:
     - service: switch.turn_on
       entity_id: switch.anlage_switch
     - service: switch.turn_on
-      entity_id: switch.fluxer
+      entity_id: switch.kompensator
     - condition: state
       entity_id: group.licht
       state: "off"
@@ -15,7 +15,7 @@ home_left:
   alias: Home Left
   sequence:
     - service: switch.turn_off
-      entity_id: switch.fluxer
+      entity_id: switch.kompensator
     - service: switch.turn_off
       entity_id: switch.anlage_switch
     - condition: state
@@ -28,7 +28,7 @@ fehrnsehn:
   alias: Fehrnsehn
   sequence:
     - service: switch.turn_off
-      entity_id: switch.fluxer
+      entity_id: switch.kompensator
     - service: light.turn_off
       entity_id: light.wohnzimmer
     - service: switch.turn_on
@@ -64,9 +64,9 @@ sleep:
     - alias: Turn off HIFI
       service: switch.turn_off
       entity_id: switch.anlage_switch
-    - alias: Turn off Fluxer
+    - alias: Turn off Kompensator
       service: switch.turn_off
-      entity_id: switch.fluxer
+      entity_id: switch.kompensator
     - alias: Turn off light
       service: light.turn_off
 
@@ -101,13 +101,25 @@ wakeup:
       data:
         entity_id: group.maximi
         transition: 900
-        brightness: 255
+        brightness: 220
         kelvin: 5000
+    - alias: Turn Kompensator On
+      service: switch.turn_on
+      data:
+        entity_id: switch.kompensator
+    - wait_template: "{{ states('sun.sun') == 'above_horizon' }}"
+    - delay:
+        hours: 2
+    - alias: Transition lights off
+      service: light.turn_off
+      data:
+        entity_id: group.maximi
+        transition: 10
 
 random_color:
   sequence:
   - service: switch.turn_off
-    entity_id: switch.fluxer
+    entity_id: switch.kompensator
   - service: light.turn_on
     data_template:
       entity_id: light.lightify
@@ -116,7 +128,7 @@ random_color:
 random_color1:
   sequence:
   - service: switch.turn_off
-    entity_id: switch.fluxer
+    entity_id: switch.kompensator
   - service: light.turn_on
     data_template:
       entity_id: light.beamer
