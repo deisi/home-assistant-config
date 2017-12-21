@@ -1,0 +1,207 @@
+- id: home_entered
+  alias: Home Entered
+  trigger:
+  - entity_id: group.people
+    platform: state
+    to: home
+  action:
+  - data:
+      entity_id: script.home_entered
+    service: script.turn_on
+- id: home_left
+  alias: Home Left
+  trigger:
+    platform: state
+    entity_id: group.people
+    to: not_home
+  action:
+  - data:
+      entity_id: script.home_left
+    service: script.turn_on
+- id: beamer_on
+  alias: Beamer On
+  trigger:
+    platform: state
+    entity_id: switch.beamer
+    to: 'on'
+  action:
+  - data:
+      entity_id: script.fehrnsehn
+    service: script.turn_on
+- id: movement_detected
+  alias: Movement Detected
+  trigger:
+    platform: state
+    entity_id: binary_sensor.multisensor_sensor
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: group.people
+    state: not_home
+  action:
+  - data:
+      entity_id: script.movement_detected
+    service: script.turn_on
+- id: tv_beats_radio
+  alias: TV beats Radio
+  trigger:
+    platform: state
+    entity_id: media_player.serv
+    to: playing
+  action:
+  - data:
+      entity_id: media_player.mpd
+    service: media_player.media_pause
+  - data:
+      entity_id: media_player.spotify
+    service: media_player.media_pause
+- id: music_playing
+  alias: Music Playing
+  trigger:
+  - platform: state
+    entity_id: media_player.kodi_rapi3
+    to: playing
+  - platform: state
+    entity_id: media_player.mpd
+    to: playing
+  - platform: state
+    entity_id: media_player.spotify
+    to: playing
+  action:
+  - data:
+      entity_id: switch.anlage_switch
+    service: switch.turn_on
+- id: ttmd
+  alias: Train to mainz delayed
+  hide_entity: true
+  trigger:
+  - entity_id: sensor.delay_to_mainz
+    from: '0'
+    platform: state
+  action:
+  - data:
+      data_template:
+        message: Train to Mainz is {{ trigger.to_state.state }} min delayed
+    service: notify.notify
+  - data:
+      data:
+        brightness: 150
+        rgb_color:
+        - 125
+        - 125
+        - 0
+      entity_id: light.status_light
+    service: homeassistant.turn_on
+- id: ttsd
+  alias: Train to Saulheim delayed
+  hide_entity: true
+  trigger:
+  - entity_id: sensor.delay_to_saulheim
+    from: '0'
+    platform: state
+  action:
+  - data:
+      data_template:
+        message: Train to Saulheim is {{ trigger.to_state.state }} min delayed
+    service: notify.notify
+- id: wml
+  alias: Washing machine Leaking
+  trigger:
+  - entity_id: sensor.everspring_st812_flood_detector_flood
+    platform: numeric_state
+    above: 100
+  action:
+  - data:
+      data_template:
+        message: Washing machine Leaking
+    service: notify.superha
+- id: update
+  alias: Update notifications
+  hide_entity: true
+  trigger:
+  - platform: state
+    entity_id: updater.updater
+  action:
+  - data:
+      messuage: There is a new Home Assistant release available.
+    service: notify.notify
+- action:
+  - data:
+      entity_id: script.wakeup
+    service: script.turn_on
+  alias: Wakeup Monday
+  condition:
+  - condition: state
+    entity_id: group.people
+    state: home
+  - condition: time
+    weekday:
+    - mon
+  id: '1505664204865'
+  trigger:
+  - at: 05:45:00
+    platform: time
+- action:
+  - data:
+      entity_id: script.wakeup
+    service: script.turn_on
+  alias: Wakeup Tuesday
+  condition:
+  - condition: state
+    entity_id: group.people
+    state: home
+  - condition: time
+    weekday:
+    - tue
+  id: '1505664204866'
+  trigger:
+  - at: 05:45:00
+    platform: time
+- action:
+  - data:
+      entity_id: script.wakeup
+    service: script.turn_on
+  alias: Wakeup Wednesday
+  condition:
+  - condition: state
+    entity_id: group.people
+    state: home
+  - condition: time
+    weekday:
+    - wed
+  id: '1505664204867'
+  trigger:
+  - at: 07:00:00
+    platform: time
+- action:
+  - data:
+      entity_id: script.wakeup
+    service: script.turn_on
+  alias: Wakeup Thursday
+  condition:
+  - condition: state
+    entity_id: group.people
+    state: home
+  - condition: time
+    weekday:
+    - thu
+  id: '1505664204868'
+  trigger:
+  - at: 06:45:00
+    platform: time
+- action:
+  - data:
+      entity_id: script.wakeup
+    service: script.turn_on
+  alias: Wakeup Friday
+  condition:
+  - condition: state
+    entity_id: group.people
+    state: home
+  - condition: time
+    weekday:
+    - fri
+  id: '1505664204869'
+  trigger:
+  - at: 07:30:00
+    platform: time

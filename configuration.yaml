@@ -12,25 +12,30 @@ logger:
   default: warning
   logs:
     homeassistant.components.mqtt: error
-    homeassistant.components.switch.beamer: critical
+    homeassistant.components.device_tracker.owntracks: error
+    #homeassistant.components.switch.beamer: critical
     homeassistant.components.sensor.snmp: critical
     homeassistant.components.light.osramlightify: error
+    #homeassistant.components.mysensors: debug
+    #mysensors: debug
+    homeassistant.components.switch.wake_on_lan: debug
 
-recorder:
-  purge_days: 7
-  db_url: !secret ha_db_url
-  include:
-    domains:
-      - device_tracker
-      - binary_sensor
-      - light
-      - media_player
-      - sensor
-      - switch
+#recorder:
+#  purge_interval: 2
+#  purge_keep_days: 7
+#  db_url: !secret ha_db_url
+#  include:
+#    domains:
+#      - device_tracker
+#      - binary_sensor
+#      - light
+#      - media_player
+#      - sensor
+ #     - switch
 
 influxdb:
   host: serv
-  username: home-assistant
+  username: ha
   password: !secret ha_influx_pw
   database: home_assistant
 
@@ -42,14 +47,14 @@ sun:
 updater:
   include_used_components: true
 http:
-  api_password: !secret ha_password
-  server_port: 443
-  ssl_certificate: ha.crt
-  ssl_key: ha.key
   trusted_networks:
     - 172.16.1.0/24
     - ::1
     - 127.0.0.1
+  api_password: !secret ha_password
+  server_port: 80
+  #ssl_certificate: /home/alarm/.homeassistant/ha.crt
+  #ssl_key: /home/alarm/.homeassistant/ha.key
   #base_url: !secret ha_base_url
 
 logbook:
@@ -61,17 +66,20 @@ zwave:
   
 #mysensors:
 #  gateways:
-#    - device: '/dev/mySensorGW'
-#      persistence_file: '/home/homeassistant/.homeassistant/mysensors0.json'
+#    - device: '/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A900VEWL-if00-port0'
+#      persistence_file: 'mysensors0.json'
 #      baud_rate: 115200
 #  version: 2.0
-#  persistence: false
+#  persistence: true
 
 emulated_hue:
-  host_ip: 172.16.1.10
+  host_ip: 172.16.1.50
   expose_by_default: false
 
 switch: !include switch.yaml
+
+shell_command:
+  turn_off_serv: 'ssh alarm@172.16.1.10 /usr/bin/systemctl suspend -i'
 
 keyboard_remote:
   device_descriptor: '/dev/input/by-id/usb-MOSART_Semi._2.4G_Keyboard_Mouse-event-kbd'
@@ -101,10 +109,6 @@ mqtt:
   username: !secret ha_mqtt_user
   password: !secret ha_mqtt_pw
 
-mqtt_eventstream:
-  publish_topic: master/topic
-  subscribe_topic: slaves/#
-
 device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
@@ -121,13 +125,16 @@ media_player:
   port: 6600
   location: living_room
 - platform: snapcast
-  host: serv
+  host: tincpi
 - platform: spotify
   client_id: !secret ha_spotify_client_id
   client_secret: !secret ha_spotify_client_secret
 #- platform: acer_projector
 #  filename: /dev/beamer
 #  name: Beamer
+
+climate:
+  - platform: zwave
 
 light: !include light.yaml
 
@@ -143,8 +150,9 @@ ifttt:
   key: !secret ha_ifttt
 
 device_sun_light_trigger:
-  light_group: group.minimi
+  light_group: group.licht
   device_group: group.people
+  light_profile: relax
 
 automation: !include automations.yaml
 

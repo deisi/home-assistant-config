@@ -12,7 +12,7 @@ sensor.living_room_humidity:
 sensor.weather_humidity:
   icon: mdi:water-percent
 binary_sensor.multisensor_sensor:
-  friendly_name: Bewegung 
+  friendly_name: Bewegung
 sensor.multisensor_temperature:
   friendly_name: Temperatur
 sensor.multisensor_luminance:
@@ -45,10 +45,9 @@ sensor.deisi_load:
 sensor.rapi3_load:
   icon: mdi:chip
 sensor.dark_sky_temperature:
-  friendly_name: Draußen
+  friendly_name: "Drau\xDFen"
 binary_sensor.binary_sensor_1_4:
-  friendly_name: Balkontür
-
+  friendly_name: "Balkont\xFCr"
 media_player.mpd:
   friendly_name: Musik Box
   emulated_hue: true
@@ -59,23 +58,20 @@ media_player.spotify:
   emulated_hue: true
 media_player.beamer:
   emulated_hue: true
-
 scene.morning:
   emulated_hue: true
-
 script.fehrnsehn:
   emulated_hue: true
 script.random_color:
-  friendly_name: Zufällige Farbe Alle
+  friendly_name: "Zuf\xE4llige Farbe Alle"
   emulated_hue: true
 script.random_color1:
-  friendly_name: Zufällige Farbe
+  friendly_name: "Zuf\xE4llige Farbe"
   emulated_hue: true
 script.sleep:
   emulated_hue: true
 script.wakeup:
   emulated_hue: true
-
 light.beamer:
   friendly_name: Leinwand
   emulated_hue: true
@@ -89,7 +85,6 @@ light.stehlampe:
   emulated_hue: true
 light.wohnzimmer:
   emulated_hue: true
-
 switch.kompensator:
   emulated_hue: true
 switch.anlage_switch:
@@ -98,12 +93,17 @@ switch.anlage_switch:
   friendly_name: Anlage
 switch.gaming_pc:
   emulated_hue: true
+  friendly_name: Spielekiste
 switch.beamer:
   emulated_hue: true
-
 group.kueche:
   emulated_hue: true
 group.licht:
   emulated_hue: true
 group.schalter:
   emulated_hue: false
+binary_sensor.binary_switch_doorbell_se_1_1:
+  friendly_name: Klingel
+  icon: mdi:bell
+binary_sensor.binary_switch_doorbell_se_2_1:
+  icon: mdi:bell
