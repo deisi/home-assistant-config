@@ -18,3 +18,4 @@ custom_components/media_player/mqtt_serial_media_player.py
 custom_components/switch/flux.py
 home-assistant_v2.db
 www/*
+.HA_VERSION
