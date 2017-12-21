@@ -53,6 +53,11 @@
 
 #- platform: fritz
 #  host: 172.16.1.1
+
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
   
 - platform: template
   sensors:

@@ -13,3 +13,12 @@ malte_kminiltexx:
   picture:
   track: true
   vendor:
+
+malte_oneplus5t:
+  hide_if_away: false
+  icon:
+  mac:
+  name: malte
+  picture:
+  track: true
+  vendor:

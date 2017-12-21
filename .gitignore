@@ -19,3 +19,6 @@ custom_components/switch/flux.py
 home-assistant_v2.db
 www/*
 .HA_VERSION
+mysensors0.json
+options.xml
+phue-*.conf

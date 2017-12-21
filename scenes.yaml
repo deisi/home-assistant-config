@@ -2,3 +2,14 @@
   entities:
     media_player.mpd:
       volume_level: 0.25
+    group.licht:
+      state: on
+      color_temp: 181
+      brightness: 10
+
+- name: Abends
+  entities:
+    group.licht:
+      state: on
+      color_temp: 383
+      brightness: 200
