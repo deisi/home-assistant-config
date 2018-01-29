@@ -50,58 +50,58 @@ binary_sensor.binary_sensor_1_4:
   friendly_name: "Balkont\xFCr"
 media_player.mpd:
   friendly_name: Musik Box
-  emulated_hue: true
+  emulated_hue_hidden: false
 media_player.kodi_rapi3:
   friendly_name: TV
-  emulated_hue: true
+  emulated_hue_hidden: false
 media_player.spotify:
-  emulated_hue: true
+  emulated_hue_hidden: false
 media_player.beamer:
-  emulated_hue: true
+  emulated_hue_hidden: false
 scene.morning:
-  emulated_hue: true
+  emulated_hue_hidden: false
 script.fehrnsehn:
-  emulated_hue: true
+  emulated_hue_hidden: false
 script.random_color:
   friendly_name: "Zuf\xE4llige Farbe Alle"
-  emulated_hue: true
+  emulated_hue_hidden: false
 script.random_color1:
   friendly_name: "Zuf\xE4llige Farbe"
-  emulated_hue: true
+  emulated_hue_hidden: false
 script.sleep:
-  emulated_hue: true
+  emulated_hue_hidden: false
 script.wakeup:
-  emulated_hue: true
+  emulated_hue_hidden: false
 light.beamer:
   friendly_name: Leinwand
-  emulated_hue: true
+  emulated_hue_hidden: false
 light.esszimmer:
-  emulated_hue: true
+  emulated_hue_hidden: false
 light.lightify:
-  emulated_hue: true
+  emulated_hue_hidden: false
 light.ofen:
-  emulated_hue: true
+  emulated_hue_hidden: false
 light.stehlampe:
-  emulated_hue: true
+  emulated_hue_hidden: false
 light.wohnzimmer:
-  emulated_hue: true
+  emulated_hue_hidden: false
 switch.kompensator:
-  emulated_hue: true
+  emulated_hue_hidden: false
 switch.anlage_switch:
   icon: mdi:speaker
-  emulated_hue: true
+  emulated_hue_hidden: false
   friendly_name: Anlage
 switch.gaming_pc:
-  emulated_hue: true
+  emulated_hue_hidden: false
   friendly_name: Spielekiste
 switch.beamer:
-  emulated_hue: true
+  emulated_hue_hidden: false
 group.kueche:
-  emulated_hue: true
+  emulated_hue_hidden: false
 group.licht:
-  emulated_hue: true
+  emulated_hue_hidden: false
 group.schalter:
-  emulated_hue: false
+  emulated_hue_hidden: true
 binary_sensor.binary_switch_doorbell_se_1_1:
   friendly_name: Klingel
   icon: mdi:bell

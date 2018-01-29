@@ -35,24 +35,26 @@
   mac_address: "D0-50-99-32-5A-8D"
   name: "Gaming PC"
   host: "172.16.1.31"
-
-- platform: wake_on_lan
-  mac_address: "40-8D-5C-EB-92-06"
-  name: "Serv"
-  host: "172.16.1.10"
   turn_off:
-    service: shell_command.turn_off_serv
+    service: hassio.addon_stdin
+    data:
+      addon: core_rpc_shutdown
+      input: spielekiste
 
-- platform: mqtt
+- platform: acer_projector
+  filename: /dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller_D-if00-port0
   name: Beamer
-  command_topic: "beamer_rev"
-  #payload_on: "* 0 IR 001\r"
-  #payload_off: "* 0 IR 002\r"
-  payload_on: "ON"
-  payload_off: "OFF"
-  state_topic: "beamer_trs"
-  #availability_topic: "beamer_trs"
-  #payload_available: ON
-  #payload_not_available: OFF
-  #optimistic: true
-  #value_template: "{{ value }}"
+
+#- platform: mqtt
+#  name: Beamer
+#  command_topic: "beamer_rev"
+#  #payload_on: "* 0 IR 001\r"
+#  #payload_off: "* 0 IR 002\r"
+#  payload_on: "ON"
+#  payload_off: "OFF"
+#  state_topic: "beamer_trs"
+#  #availability_topic: "beamer_trs"
+#  #payload_available: ON
+#  #payload_not_available: OFF
+#  #optimistic: true
+#  #value_template: "{{ value }}"

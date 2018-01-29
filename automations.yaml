@@ -139,7 +139,7 @@
     - mon
   id: '1505664204865'
   trigger:
-  - at: 05:45:00
+  - at: 06:30:00
     platform: time
 - action:
   - data:
@@ -171,7 +171,7 @@
     - wed
   id: '1505664204867'
   trigger:
-  - at: 07:00:00
+  - at: 05:45:00
     platform: time
 - action:
   - data:
@@ -187,7 +187,7 @@
     - thu
   id: '1505664204868'
   trigger:
-  - at: 06:45:00
+  - at: 05:45:00
     platform: time
 - action:
   - data:
@@ -203,5 +203,16 @@
     - fri
   id: '1505664204869'
   trigger:
-  - at: 07:30:00
+  - at: 06:30:00
+    platform: time
+- action:
+  - data:
+      entity_id: group.heizung
+      operation_mode: Heat
+    service: climate.set_operation_mode
+  alias: Heat On
+  condition: []
+  id: '1514916438776'
+  trigger:
+  - at: '16:00'
     platform: time

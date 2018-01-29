@@ -1,7 +1,9 @@
 - name: Morning
   entities:
     media_player.mpd:
-      volume_level: 0.25
+      volume_level: 0.50
+    media_player.snapcast_client_fd418a3586c64c6eaa401ee8a8c74edc:
+      volume_level: 0.80
     group.licht:
       state: on
       color_temp: 181
@@ -11,5 +13,26 @@
   entities:
     group.licht:
       state: on
-      color_temp: 383
+      color_temp: 500
+      brightness: 100
+
+- name: Relax
+  entities:
+    group.licht:
+      state: on
+      rgb_color: [255,182,77]
       brightness: 200
+
+- name: Energize
+  entities:
+    group.licht:
+      state: on
+      rgb_color: [242,228,190]
+      brightness: 200
+
+- name: Reading
+  entities:
+    group.licht:
+      state: on
+      rgb_color: [255,210,130]
+      brightness: 255

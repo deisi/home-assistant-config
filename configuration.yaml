@@ -20,18 +20,45 @@ logger:
     #mysensors: debug
     homeassistant.components.switch.wake_on_lan: debug
 
-#recorder:
-#  purge_interval: 2
-#  purge_keep_days: 7
-#  db_url: !secret ha_db_url
-#  include:
-#    domains:
-#      - device_tracker
-#      - binary_sensor
-#      - light
-#      - media_player
-#      - sensor
- #     - switch
+recorder:
+  db_url: !secret ha_db_url
+  exclude:
+    entities:
+      - sensor.time
+      - sensor.anlage_velocity
+      - sensor.date
+      - sensor.deisi_uptime # uptime days is enough
+      - sensor.multisensor_general
+      - sensor.everspring_st812_flood_detector_alarm_type
+      - sensor.heizung0_alarm_level
+      - sensor.heizung0_alarm_type
+      - sensor.heizung0_sourcenodeid
+      - sensor.heizung0_system
+      - sensor.heizung1_alarm_level
+      - sensor.heizung1_alarm_type
+      - sensor.heizung1_sourcenodeid
+      - sensor.heizung1_system
+      - sensor.heizung2_alarm_level
+      - sensor.heizung2_alarm_type
+      - sensor.heizung2_sourcenodeid
+      - sensor.heizung2_system
+      - sensor.serv_homefree # GB Version is enough
+      - sensor.serv_rootfree # GB Version is enough
+      - sensor.serv_volfree # GB Version is enough
+    domains:
+      - group
+      - zone
+      - zwave
+  #include:
+  #  domains:
+  #    - device_tracker
+  #    - binary_sensor
+  #    - light
+  #    - media_player
+  #    - sensor
+  #    - switch
+  #    - sun
+  #    - climate
 
 influxdb:
   host: serv
@@ -58,6 +85,16 @@ http:
   #base_url: !secret ha_base_url
 
 logbook:
+  exclude:
+    entities:
+      - sensor.time
+      - sensor.since_last_boot
+      - sensor.anlage_exporting
+      - sensor.deisi_uptime
+      - sensor.saulheim_to_mainz
+      - sensor.mainz_to_saulheim
+      - sensor.bewegungssensor_stats_count
+      - sensor.average_load_5m
 
 zwave:
   usb_path: /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
@@ -73,13 +110,14 @@ zwave:
 #  persistence: true
 
 emulated_hue:
-  host_ip: 172.16.1.50
+  host_ip: 172.16.1.10
   expose_by_default: false
+  
+hue:
+  bridges:
+    - host: 172.16.1.29
 
 switch: !include switch.yaml
-
-shell_command:
-  turn_off_serv: 'ssh alarm@172.16.1.10 /usr/bin/systemctl suspend -i'
 
 keyboard_remote:
   device_descriptor: '/dev/input/by-id/usb-MOSART_Semi._2.4G_Keyboard_Mouse-event-kbd'
@@ -117,15 +155,15 @@ sensor: !include sensors.yaml
 
 media_player:
 - platform: kodi
-  host: rapi3.local
+  host: serv
   port: 8080
-  name: kodi_rapi3
+  name: kodi_serv
 - platform: mpd
   host: serv
   port: 6600
   location: living_room
 - platform: snapcast
-  host: tincpi
+  host: serv
 - platform: spotify
   client_id: !secret ha_spotify_client_id
   client_secret: !secret ha_spotify_client_secret
@@ -149,10 +187,10 @@ zone: !include zone.yaml
 ifttt:
   key: !secret ha_ifttt
 
-device_sun_light_trigger:
-  light_group: group.licht
-  device_group: group.people
-  light_profile: relax
+#device_sun_light_trigger:
+#  light_group: group.licht
+#  device_group: group.people
+#  light_profile: relax
 
 automation: !include automations.yaml
 

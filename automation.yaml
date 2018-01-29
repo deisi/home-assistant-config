@@ -19,14 +19,12 @@
     event_data:
       key_code: 110
   action:
+    - service: light.turn_off
+      entity_id: group.licht
     - service: media_player.media_pause
       entity_id: group.player
     - service: switch.turn_off
       entity_id: switch.anlage_switch
-    - service: switch.turn_off
-      entity_id: switch.kompensator
-    - service: light.turn_off
-      entity_id: group.minimi
 
 - alias: Keyboard Hifi on
   hide_entity: True

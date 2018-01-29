@@ -21,6 +21,20 @@ automations:
     - automation.wake_up_0600
     - automation.wake_up_0658
     - automation.washing_machine_leaking
+    - automation.heat_on
+    - automation.wakeup_monday
+    - automation.wakeup_tuesday
+    - automation.wakeup_wednesday
+    - automation.wakeup_thursday
+    - automation.wakeup_friday
+Profile:
+  name: Profile
+  entities:
+    - scene.relax
+    - scene.abends
+    - scene.energize
+    - scene.concentrate
+    - scene.reading
 kueche:
   name: Küche
   entities:
@@ -84,7 +98,7 @@ people:
 player:
   entities:
     - media_player.mpd
-    - media_player.kodi_rapi3
+    - media_player.kodi_serv
     - media_player.spotify
 outside:
   name: Draußen
@@ -162,12 +176,14 @@ wohnzimmer:
     - switch.kompensator
     - switch.gaming_pc
     - media_player.serv
-    - media_player.kodi_rapi3
+    - media_player.kodi_serv
     - media_player.mpd
     - sensor.bewegungssensor_stats_count
     - binary_sensor.multisensor_sensor
     - sensor.multisensor_luminance
     - sensor.multisensor_temperature
+    - media_player.snapcast_client_fd418a3586c64c6eaa401ee8a8c74edc
+    - media_player.snapcast_client_b827eb71560e
 badezimmer:
   view: yes
   name: Badezimmer
@@ -200,12 +216,14 @@ default_view:
     - group.lichter
     - group.scripts
     - group.sensors
+    - group.profile
     - group.schalter
     - group.heizung
     - group.hud
     - media_player.mpd
-    - media_player.kodi_rapi3
+    - media_player.kodi_serv
     - media_player.spotify
     - media_player.beamer
     - sensor.in_wall_sensor_00_10_1
     - switch.in_wall_sensor_00_10_2
+    - configurator.philips_hue

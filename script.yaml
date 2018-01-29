@@ -1,18 +1,28 @@
 home_entered:
   alias: Home Entered
   sequence:
-    - service: switch.turn_on
-      entity_id: switch.anlage_switch
-    #- service: light.turn_on
-    #  entity_id: group.licht
-
+    - service: climate.set_operation_mode
+      data:
+        entity_id: group.heizung
+        operation_mode: "Heat"
+    - service: light.turn_on
+      entity_id: group.licht
+    
 home_left:
   alias: Home Left
   sequence:
     - service: switch.turn_off
       entity_id: switch.anlage_switch
-    #- service: light.turn_off
-    #  entity_id: group.licht
+    - service: climate.set_operation_mode
+      data:
+        entity_id: group.heizung
+        operation_mode: "Off"
+    - service: light.turn_off
+      entity_id: group.licht
+    - service: media_player.media_pause
+      entity_id: media_player.mpd
+    - service: media_player.media_pause
+      entity_id: media_player.kodi_serv
 
 fehrnsehn:
   alias: Fehrnsehn
