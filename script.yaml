@@ -5,6 +5,9 @@ home_entered:
       data:
         entity_id: group.heizung
         operation_mode: "Heat"
+    - condition: sun
+      after: sunset 
+      after_offset: "-01:00:00"
     - service: light.turn_on
       entity_id: group.licht
     
