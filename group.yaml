@@ -75,6 +75,11 @@ maximi:
     - light.schnapsschrank0
     - light.schnapsschrank1
     - light.stehlampe
+ohne_wohnzimmer:
+  entities:
+    - light.ofen
+    - light.esszimmer
+    - light.kueche
 heizung:
   name: Heizung
   entities:

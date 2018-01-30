@@ -13,8 +13,15 @@
   entities:
     group.licht:
       state: on
-      color_temp: 500
-      brightness: 100
+      color_temp: &ct_abends 500
+      brightness: &br_abends 150
+
+- name: Abends_ohne_wohnzimmer
+  entities:
+    group.ohne_wohnzimmer:
+      state: on
+      color_temp: *ct_abends
+      brightness: &br_abends
 
 - name: Relax
   entities:
