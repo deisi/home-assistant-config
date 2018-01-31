@@ -21,7 +21,7 @@
     group.ohne_wohnzimmer:
       state: on
       color_temp: *ct_abends
-      brightness: &br_abends
+      brightness: *br_abends
 
 - name: Relax
   entities:
