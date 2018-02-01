@@ -84,11 +84,8 @@ heizung:
   name: Heizung
   entities:
     - climate.heizung0_cooling_1
-    - climate.heizung0_dry_air
     - climate.heizung1_cooling_1
-    - climate.heizung1_dry_air
     - climate.heizung2_cooling_1
-    - climate.heizung2_dry_air
 schalter:
   name: Schalter
   entities:
