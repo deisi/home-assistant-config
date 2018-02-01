@@ -1,0 +1,3 @@
+climate.heizung0_dry_air:
+  ignored: true
+  polling_intensity: 0
