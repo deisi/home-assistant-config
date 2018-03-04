@@ -107,3 +107,7 @@ binary_sensor.binary_switch_doorbell_se_1_1:
   icon: mdi:bell
 binary_sensor.binary_switch_doorbell_se_2_1:
   icon: mdi:bell
+sensor.relay_1_1:
+  friendly_name: Boiler Küche
+switch.relay_1_2:
+  friendly_name: Boiler Küche

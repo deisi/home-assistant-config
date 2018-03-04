@@ -16,12 +16,13 @@ logger:
     #homeassistant.components.switch.beamer: critical
     homeassistant.components.sensor.snmp: critical
     homeassistant.components.light.osramlightify: error
-    #homeassistant.components.mysensors: debug
+    homeassistant.components.mysensors: debug
     #mysensors: debug
     homeassistant.components.switch.wake_on_lan: debug
 
 recorder:
   db_url: !secret ha_db_url
+  purge_keep_days: 14
   exclude:
     entities:
       - sensor.time
@@ -100,14 +101,12 @@ zwave:
   usb_path: /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_0001-if00-port0
   #debug: true
   #polling_interval: 30000
-  
-#mysensors:
-#  gateways:
-#    - device: '/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_A900VEWL-if00-port0'
-#      persistence_file: 'mysensors0.json'
-#      baud_rate: 115200
-#  version: 2.0
-#  persistence: true
+
+mysensors:
+  gateways:
+    - device: '/dev/serial/by-id/usb-FTDI_FT232R_USB_UART_AH00Q9PD-if00-port0'
+      persistence_file: '/config/mysensors2.json'
+  version: '2.0'
 
 emulated_hue:
   host_ip: 172.16.1.10

@@ -14,7 +14,7 @@
     group.licht:
       state: on
       color_temp: &ct_abends 500
-      brightness: &br_abends 150
+      brightness: &br_abends 200
 
 - name: Abends_ohne_wohnzimmer
   entities:

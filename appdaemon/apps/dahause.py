@@ -1,7 +1,7 @@
 """App to control presence related tasks."""
-import appdaemon.appapi as appapi
+import appdaemon.plugins.hass.hassapi as hass
 
-class DaHause(appapi.AppDaemon):
+class DaHause(hass.Hass):
 
     def initialize(self):
         self.listen_state(self.on_home_entered,
@@ -9,15 +9,22 @@ class DaHause(appapi.AppDaemon):
         self.listen_state(self.on_home_left,
                           self.args["people"], new="not_home")
 
-    def on_home_entered(self):
+    def on_home_entered(self, entity, attribute, old, new, kwargs):
+        self.log("on_home_entered called")
         if self.sun_down():
-            self.turn_on(self.args["lights_on"])
+            self.log("Sun is down.")
+            self.turn_on("group.licht")
+            self.turn_on("scene.abends")
         self.turn_on(self.args["switches_on"])
+        temp = float(self.get_state(entity="sensor.dark_sky_temperature"))
+        if temp < self.args["heizung_min_val"]:
+            self.log("Brrr its cold. Turn on heating for you.")
+            self.call_service(
+                "climate/set_operation_mode",
+                entity_id=self.args["heizung_on"],
+                operation_mode="Heat"
+               )
 
-    def on_home_left(self):
-        self.turn_off(self.args["lights_off"])
-        self.turn_off(self.args["switches_off"])
-        self.call_service(
-            "media_player/media_play_pause",
-            entity_id=self.args["mediaplayer_off"]
-        )
+    def on_home_left(self, entity, attribute, old, new, kwargs):
+        self.log("on_home_left called")
+        self.call_service("script/turn_on", entity_id="script/home_left")

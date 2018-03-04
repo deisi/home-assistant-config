@@ -21,3 +21,4 @@ ha.csr
 www*
 options.xml
 mysensors0.json
+phue-*.conf

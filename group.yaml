@@ -1,3 +1,9 @@
+power:
+  name: Energy Meter
+  entities:
+    - sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power
+    - sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading
+    - sensor.aeotec_dsb28_home_energy_meter_2nd_edition_unknown
 scripts:
   name: Scripte
   entities:
@@ -38,16 +44,15 @@ Profile:
 kueche:
   name: Küche
   entities:
-    - light.kuche
-    - light.kueche0
-    - light.kueche2
-    - light.stehlampe
+    - light.kuche0
+    - light.kuche1
+    - light.kuche2
 licht:
   name: Licht
   entities:
     - light.lightify
-    - light.kueche2
-    - light.stehlampe
+    #- light.kueche2
+    #- light.stehlampe
 lichter:
   name: Lichter
   entities:
@@ -59,7 +64,6 @@ lichter:
     - light.kuche
     - light.kueche2
     - light.stehlampe
-    - light.kueche0
 maximi:
   entities:
     - light.sofa0
@@ -94,6 +98,7 @@ schalter:
     - switch.kompensator
     - switch.gaming_pc
     - switch.serv
+    - switch.relay_1_2
 people:
   - device_tracker.malte_oneplus5t
   - device_tracker.didi_herolte
@@ -186,6 +191,7 @@ wohnzimmer:
     - sensor.multisensor_temperature
     - media_player.snapcast_client_fd418a3586c64c6eaa401ee8a8c74edc
     - media_player.snapcast_client_b827eb71560e
+    - media_player.buro_2
 badezimmer:
   view: yes
   name: Badezimmer
@@ -207,10 +213,13 @@ aux:
   view: yes
   name: Auxilaries
   entities:
+    - sun.sun
     - group.people
     - group.automations
     - group.outside
     - media_player.serv
+    - group.power
+    - sensor.relay_1_1
 default_view:
   view: yes
   icon: mdi:home
@@ -226,6 +235,7 @@ default_view:
     - media_player.kodi_serv
     - media_player.spotify
     - media_player.beamer
+    - media_player.buro_2
     - sensor.in_wall_sensor_00_10_1
     - switch.in_wall_sensor_00_10_2
     - configurator.philips_hue

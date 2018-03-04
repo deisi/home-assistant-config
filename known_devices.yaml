@@ -6,14 +6,6 @@ didi_herolte:
   track: true
   vendor:
 
-malte_kminiltexx:
-  hide_if_away: false
-  mac:
-  name: malte
-  picture:
-  track: true
-  vendor:
-
 malte_oneplus5t:
   hide_if_away: false
   icon:
@@ -21,4 +13,13 @@ malte_oneplus5t:
   name: malte
   picture:
   track: true
+  vendor:
+
+malte_kminiltexx:
+  hide_if_away: false
+  icon:
+  mac:
+  name: malte
+  picture:
+  track: false
   vendor:

@@ -1,6 +1,6 @@
 - platform: hue
   host: 172.16.1.29
-  allow_unreachable: true
+  #allow_unreachable: true
 
 #- platform: blinksticklight
 #  serial: BS006032-3.0
