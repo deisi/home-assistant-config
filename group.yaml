@@ -1,9 +1,14 @@
-power:
-  name: Energy Meter
+zwave:
+  name: Zwave
   entities:
-    - sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power
-    - sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading
-    - sensor.aeotec_dsb28_home_energy_meter_2nd_edition_unknown
+    - zwave.aeotec_dsa02203_zstick_s2
+    - zwave.anlage
+    - zwave.energy_meter
+    - zwave.everspring_st812_flood_detector
+    - zwave.heizung0
+    - zwave.heizung1
+    - zwave.heizung2
+    - zwave.multisensor
 scripts:
   name: Scripte
   entities:
@@ -27,6 +32,7 @@ automations:
     - automation.wake_up_0600
     - automation.wake_up_0658
     - automation.washing_machine_leaking
+    - automation.turn_on_boiler
     - automation.heat_on
     - automation.wakeup_monday
     - automation.wakeup_tuesday
@@ -133,19 +139,11 @@ hud:
     - sensor.temperature_bath
     - sensor.multisensor_luminance
     - binary_sensor.binary_switch_doorbell_se_1_1
-rapi4:
-  - sensor.average_load
-  - sensor.ram_free
-  - sensor.disk_use_
-  - sensor.speedtest_download
-  - sensor.speedtest_upload
-  - sensor.speedtest_ping
-  - sensor.since_last_boot
-  - sensor.average_load_15m
-  - sensor.average_load_5m
 serv:
-  - sensor.serv_load
-  - sensor.serv_uptime_days
+  - sensor.disk_use_percent_
+  - sensor.memory_free
+  - sensor.load_5m
+  - sensor.since_last_boot
   - sensor.serv_volfree_gb
   - sensor.serv_homefree_gb
   - sensor.serv_rootfree_gb
@@ -220,6 +218,11 @@ aux:
     - media_player.serv
     - group.power
     - sensor.relay_1_1
+    - sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power
+    - sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading
+    - group.zwave
+    - sensor.saulheim_to_mainz
+    - sensor.mainz_to_saulheim
 default_view:
   view: yes
   icon: mdi:home

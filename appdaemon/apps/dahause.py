@@ -24,7 +24,8 @@ class DaHause(hass.Hass):
                 entity_id=self.args["heizung_on"],
                 operation_mode="Heat"
                )
+        self.turn_off("switch.relay_1_2")
 
     def on_home_left(self, entity, attribute, old, new, kwargs):
         self.log("on_home_left called")
-        self.call_service("script/turn_on", entity_id="script/home_left")
+        self.call_service("script/turn_on", entity_id="script.home_left")

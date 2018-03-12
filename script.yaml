@@ -13,6 +13,8 @@ home_left:
       entity_id: media_player.mpd
     - service: media_player.media_pause
       entity_id: media_player.kodi_serv
+    - service: switch.turn_on
+      entity_id: switch.relay_1_2
 
 fehrnsehn:
   alias: Fehrnsehn
@@ -56,6 +58,10 @@ wakeup:
       service: script.turn_on
       data:
         entity_id: script.radio_music
+    - alias: Turn on Boiler
+      service: switch.turn_off
+      data:
+        entity_id: switch.relay_1_2
     - delay:
         seconds: 10
     - alias: Transition lights

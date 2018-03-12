@@ -8,8 +8,10 @@
     event_data:
       key_code: 107
   action:
-    service: homeassistant.turn_on
-    entity_id: group.licht
+    - service: homeassistant.turn_on
+      entity_id: group.licht
+    - service: switch.turn_off
+      entity_id: switch.relay_1_2
 
 - alias: Keyboard All off
   hide_entity: True
@@ -25,6 +27,8 @@
       entity_id: group.player
     - service: switch.turn_off
       entity_id: switch.anlage_switch
+    - service: switch.turn_on
+      entity_id: switch.relay_1_2
 
 - alias: Keyboard Hifi on
   hide_entity: True
