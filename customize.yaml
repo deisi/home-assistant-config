@@ -111,3 +111,13 @@ sensor.relay_1_1:
   friendly_name: Boiler Küche
 switch.relay_1_2:
   friendly_name: Boiler Küche
+sensor.mymultisensor_2_1:
+  friendly_name: Draußen1
+sensor.mymultisensor_2_3:
+  friendly_name: Draußen1 Humidity
+sensor.mymultisensor_2_4:
+  friendly_name: Draußen1 Brightness
+sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power:
+  friendly_name: Power Currently
+sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading:
+  friendly_name: Power Total

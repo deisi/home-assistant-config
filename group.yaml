@@ -130,6 +130,9 @@ outside:
     - sensor.soil_moisture_sensor_in_p_3_2
     - sensor.soil_moisture_sensor_in_p_3_3
     - sensor.soil_moisture_sensor_in_p_3_7
+    - sensor.mymultisensor_2_1
+    - sensor.mymultisensor_2_3
+    - sensor.mymultisensor_2_4
 hud:
   name: HUD
   entities:
@@ -218,8 +221,6 @@ aux:
     - media_player.serv
     - group.power
     - sensor.relay_1_1
-    - sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power
-    - sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading
     - group.zwave
     - sensor.saulheim_to_mainz
     - sensor.mainz_to_saulheim
@@ -242,3 +243,5 @@ default_view:
     - sensor.in_wall_sensor_00_10_1
     - switch.in_wall_sensor_00_10_2
     - configurator.philips_hue
+    - sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power
+    - sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading

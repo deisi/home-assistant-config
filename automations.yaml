@@ -186,7 +186,7 @@
   action:
   - data:
       entity_id: switch.relay_1_2
-    service: script.turn_off
+    service: switch.turn_off
   alias: Turn on Boiler
   condition:
   - condition: state
