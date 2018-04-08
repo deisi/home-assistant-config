@@ -1,210 +1,312 @@
 light.kueche2:
+  name:
   platform: hue
   unique_id: 00:17:88:01:00:f5:dc:75-0b
 light.stehlampe:
+  name:
   platform: hue
   unique_id: 00:17:88:01:00:e3:99:c7-0b
 sensor.everspring_st812_flood_detector_alarm_type:
+  name:
   platform: zwave
   unique_id: 5-72057594127859713
 sensor.everspring_st812_flood_detector_alarm_level:
+  name:
   platform: zwave
   unique_id: 5-72057594127859729
 sensor.everspring_st812_flood_detector_flood:
+  name:
   platform: zwave
   unique_id: 5-72057594128564305
 sensor.multisensor_temperature:
+  name:
   platform: zwave
   unique_id: 6-72057594143588370
 sensor.multisensor_luminance:
+  name:
   platform: zwave
   unique_id: 6-72057594143588402
 binary_sensor.multisensor_sensor:
+  name:
   platform: zwave
   unique_id: 6-72057594143571968
 sensor.multisensor_general:
+  name:
   platform: zwave
   unique_id: 6-72057594145341441
 switch.anlage_switch:
+  name:
   platform: zwave
   unique_id: 7-72057594160168960
 sensor.anlage_power:
+  name:
   platform: zwave
   unique_id: 7-72057594160365634
 sensor.anlage_velocity:
+  name:
   platform: zwave
   unique_id: 7-72057594160365666
 sensor.anlage_energy:
+  name:
   platform: zwave
   unique_id: 7-72057594160381954
 sensor.anlage_power_2:
+  name:
   platform: zwave
   unique_id: 7-72057594160382082
 sensor.anlage_exporting:
+  name:
   platform: zwave
   unique_id: 7-72057594160382464
 sensor.heizung0_temperature:
+  name:
   platform: zwave
   unique_id: 8-72057594177142802
 climate.heizung0_cooling_1:
+  name:
   platform: zwave
   unique_id: 8-72057594177437730
 climate.heizung0_dry_air:
+  name:
   platform: zwave
   unique_id: 8-72057594177437826
 sensor.heizung0_alarm_type:
+  name:
   platform: zwave
   unique_id: 8-72057594178191361
 sensor.heizung0_alarm_level:
+  name:
   platform: zwave
   unique_id: 8-72057594178191377
 sensor.heizung0_sourcenodeid:
+  name:
   platform: zwave
   unique_id: 8-72057594178191393
 sensor.heizung0_power_management:
+  name:
   platform: zwave
   unique_id: 8-72057594178191537
 sensor.heizung0_system:
+  name:
   platform: zwave
   unique_id: 8-72057594178191553
 sensor.heizung1_temperature:
+  name:
   platform: zwave
   unique_id: 9-72057594193920018
 climate.heizung1_cooling_1:
+  name:
   platform: zwave
   unique_id: 9-72057594194214946
 climate.heizung1_dry_air:
+  name:
   platform: zwave
   unique_id: 9-72057594194215042
 sensor.heizung1_alarm_type:
+  name:
   platform: zwave
   unique_id: 9-72057594194968577
 sensor.heizung1_alarm_level:
+  name:
   platform: zwave
   unique_id: 9-72057594194968593
 sensor.heizung1_sourcenodeid:
+  name:
   platform: zwave
   unique_id: 9-72057594194968609
 sensor.heizung1_power_management:
+  name:
   platform: zwave
   unique_id: 9-72057594194968753
 sensor.heizung1_system:
+  name:
   platform: zwave
   unique_id: 9-72057594194968769
 sensor.heizung_broken_temperature:
+  name:
   platform: zwave
   unique_id: 10-72057594210697234
 climate.heizung_broken_cooling_1:
+  name:
   platform: zwave
   unique_id: 10-72057594210992162
 climate.heizung_broken_dry_air:
+  name:
   platform: zwave
   unique_id: 10-72057594210992258
 sensor.heizung_broken_alarm_type:
+  name:
   platform: zwave
   unique_id: 10-72057594211745793
 sensor.heizung_broken_alarm_level:
+  name:
   platform: zwave
   unique_id: 10-72057594211745809
 sensor.heizung_broken_sourcenodeid:
+  name:
   platform: zwave
   unique_id: 10-72057594211745825
 sensor.heizung_broken_power_management:
+  name:
   platform: zwave
   unique_id: 10-72057594211745969
 sensor.heizung_broken_system:
+  name:
   platform: zwave
   unique_id: 10-72057594211745985
 sensor.heizung2_temperature:
+  name:
   platform: zwave
   unique_id: 11-72057594227474450
 climate.heizung2_cooling_1:
+  name:
   platform: zwave
   unique_id: 11-72057594227769378
 climate.heizung2_dry_air:
+  name:
   platform: zwave
   unique_id: 11-72057594227769474
 sensor.heizung2_alarm_type:
+  name:
   platform: zwave
   unique_id: 11-72057594228523009
 sensor.heizung2_alarm_level:
+  name:
   platform: zwave
   unique_id: 11-72057594228523025
 sensor.heizung2_sourcenodeid:
+  name:
   platform: zwave
   unique_id: 11-72057594228523041
 sensor.heizung2_power_management:
+  name:
   platform: zwave
   unique_id: 11-72057594228523185
 sensor.heizung2_system:
+  name:
   platform: zwave
   unique_id: 11-72057594228523201
 sensor.unknown:
+  name:
   platform: zwave
   unique_id: 12-72057594244268034
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_unknown:
+  name:
   platform: zwave
   unique_id: 12-144115188282195970
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_unknown_2:
+  name:
   platform: zwave
   unique_id: 12-216172782320123906
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_unknown_3:
+  name:
   platform: zwave
   unique_id: 12-288230376358051842
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power:
+  name:
   platform: zwave
   unique_id: 12-72057594244268162
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_voltage:
+  name:
   platform: zwave
   unique_id: 12-72057594244268290
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_current:
+  name:
   platform: zwave
   unique_id: 12-72057594244268354
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power_2:
+  name:
   platform: zwave
   unique_id: 12-144115188282196098
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_voltage_2:
+  name:
   platform: zwave
   unique_id: 12-144115188282196226
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_current_2:
+  name:
   platform: zwave
   unique_id: 12-144115188282196290
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power_3:
+  name:
   platform: zwave
   unique_id: 12-216172782320124034
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_voltage_3:
+  name:
   platform: zwave
   unique_id: 12-216172782320124162
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_current_3:
+  name:
   platform: zwave
   unique_id: 12-216172782320124226
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power_4:
+  name:
   platform: zwave
   unique_id: 12-288230376358051970
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_voltage_4:
+  name:
   platform: zwave
   unique_id: 12-288230376358052098
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_current_4:
+  name:
   platform: zwave
   unique_id: 12-288230376358052162
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading:
+  name:
   platform: zwave
   unique_id: 12-72057594244268050
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading_2:
+  name:
   platform: zwave
   unique_id: 12-144115188282195986
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading_3:
+  name:
   platform: zwave
   unique_id: 12-216172782320123922
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading_4:
+  name:
   platform: zwave
   unique_id: 12-288230376358051858
 media_player.chromecast:
+  name:
   platform: cast
   unique_id: 8603626b-67e9-4644-6f3d-876869b657fb
 sensor.energy_meter_previous_reading:
+  name:
   platform: zwave
   unique_id: 12-72057594244268178
 sensor.multisensor_power:
+  name:
   platform: zwave
   unique_id: 6-72057594143588418
+sensor.alarm_type:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077441
+sensor.alarm_level:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077457
+sensor.eurotronic_unknown_type0003_id0001_temperature:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261028882
+climate.eurotronic_unknown_type0003_id0001_cooling_1:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261323810
+climate.eurotronic_unknown_type0003_id0001_dry_air:
+  name:
+  platform: zwave
+  unique_id: 13-72057594261323906
+sensor.eurotronic_unknown_type0003_id0001_sourcenodeid:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077473
+sensor.eurotronic_unknown_type0003_id0001_power_management:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077617
+sensor.eurotronic_unknown_type0003_id0001_system:
+  name:
+  platform: zwave
+  unique_id: 13-72057594262077633

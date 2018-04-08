@@ -94,7 +94,7 @@ heizung:
   name: Heizung
   entities:
     - climate.heizung0_cooling_1
-    - climate.heizung1_cooling_1
+    - climate.eurotronic_unknown_type0003_id0001_cooling_1
     - climate.heizung2_cooling_1
 schalter:
   name: Schalter
@@ -131,15 +131,26 @@ outside:
     - sensor.soil_moisture_sensor_in_p_3_3
     - sensor.soil_moisture_sensor_in_p_3_7
     - sensor.mymultisensor_2_1
+    - sensor.mymultisensor_2_2
     - sensor.mymultisensor_2_3
-    - sensor.mymultisensor_2_4
+    #- sensor.mymultisensor_2_4 this is the broken sensor
+    - sensor.mymultisensor_2_5
+    - sensor.mymultisensor_2_6
+    - sensor.mymultisensor_2_7
+    - sensor.mymultisensor_2_7
+    - sensor.mymultisensor_2_8
 hud:
   name: HUD
   entities:
-    - sensor.dark_sky_temperature
-    - sensor.280000064b48ec
+    - sensor.mymultisensor_2_2
     - sensor.multisensor_temperature
     - sensor.temperature_bath
+    #- sensor.dark_sky_temperature
+    - sensor.mymultisensor_2_3
+    - sensor.humidity_bath
+    #- sensor.dark_sky_humidity
+    - sensor.280000064b48ec
+    - sensor.mymultisensor_2_1
     - sensor.multisensor_luminance
     - binary_sensor.binary_switch_doorbell_se_1_1
 serv:
@@ -191,7 +202,6 @@ wohnzimmer:
     - sensor.multisensor_luminance
     - sensor.multisensor_temperature
     - media_player.snapcast_client_fd418a3586c64c6eaa401ee8a8c74edc
-    - media_player.snapcast_client_b827eb71560e
     - media_player.buro_2
 badezimmer:
   view: yes
@@ -201,6 +211,7 @@ badezimmer:
     - sensor.temperature_bath
     - sensor.everspring_st812_flood_detector_flood
     - media_player.rapi2
+    - media_player.snapcast_client_b827eb71560e
 servers:
   view: yes
   name: Servers

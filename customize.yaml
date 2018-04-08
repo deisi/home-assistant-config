@@ -6,6 +6,9 @@ sensor.anlage_power:
   friendly_name: HIFI Power
 sensor.humidity_bath:
   icon: mdi:water-percent
+  friendly_name: Badezimmer Luftfeuchtigkeit
+sensor.temperature_bath:
+  friendly_name: Badezimmer Temperatur
 sensor.living_room_humidity:
   icon: mdi:water-percent
   friendly_name: Luftfeuchtigkeit
@@ -14,9 +17,10 @@ sensor.weather_humidity:
 binary_sensor.multisensor_sensor:
   friendly_name: Bewegung
 sensor.multisensor_temperature:
-  friendly_name: Temperatur
+  friendly_name: Innen Temperatur
 sensor.multisensor_luminance:
-  friendly_name: Helligkeit
+  friendly_name: Innen Helligkeit
+  icon: mdi:white-balance-sunny
 sensor.everspring_st812_flood_detector_flood:
   friendly_name: Washing machine
   icon: mdi:water
@@ -45,7 +49,7 @@ sensor.deisi_load:
 sensor.rapi3_load:
   icon: mdi:chip
 sensor.dark_sky_temperature:
-  friendly_name: "Drau\xDFen"
+  friendly_name: "Drau\xDFen et"
 binary_sensor.binary_sensor_1_4:
   friendly_name: "Balkont\xFCr"
 media_player.mpd:
@@ -94,8 +98,10 @@ switch.anlage_switch:
 switch.gaming_pc:
   emulated_hue_hidden: false
   friendly_name: Spielekiste
+  icon: mdi:desktop-tower
 switch.beamer:
   emulated_hue_hidden: false
+  icon: mdi:projector
 group.kueche:
   emulated_hue_hidden: false
 group.licht:
@@ -111,13 +117,26 @@ sensor.relay_1_1:
   friendly_name: Boiler Küche
 switch.relay_1_2:
   friendly_name: Boiler Küche
-sensor.mymultisensor_2_1:
-  friendly_name: Draußen1
-sensor.mymultisensor_2_3:
-  friendly_name: Draußen1 Humidity
-sensor.mymultisensor_2_4:
-  friendly_name: Draußen1 Brightness
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power:
   friendly_name: Power Currently
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading:
   friendly_name: Power Total
+sensor.mymultisensor_2_1:
+  friendly_name: Außen Helligkeit
+  icon: mdi:white-balance-sunny
+sensor.mymultisensor_2_2:
+  friendly_name: Außen Temperatur
+sensor.mymultisensor_2_3:
+  friendly_name: Außen Luftfeuchtigkeit
+sensor.mymultisensor_2_5:
+  friendly_name: Außen Luftdruck
+sensor.mymultisensor_2_6:
+  friendly_name: Wettervorhersage
+sensor.mymultisensor_2_7:
+  friendly_name: Feinstaub 10µm 
+sensor.mymultisensor_2_8:
+  friendly_name: Feinstaub 2.5µm
+media_player.snapcast_client_fd418a3586c64c6eaa401ee8a8c74edc:
+  friendly_name: Serv Snapcast
+media_player.snapcast_client_b827eb71560e:
+  friendly_name: Rapi2 Snapcast
