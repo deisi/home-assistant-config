@@ -69,6 +69,7 @@ lichter:
     - light.esszimmer
     - light.kuche
     - light.kueche2
+    - light.hyperion
     - light.stehlampe
 maximi:
   entities:

@@ -9,3 +9,5 @@
 - platform: osramlightify
   host: 172.16.1.32
   allow_lightify_groups: true
+- platform: hyperion
+  host: 172.16.1.10
