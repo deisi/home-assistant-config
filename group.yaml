@@ -107,8 +107,8 @@ schalter:
     - switch.serv
     - switch.relay_1_2
 people:
-  - device_tracker.malte_oneplus5t
   - device_tracker.didi_herolte
+  - device_tracker.malte_oneplus5t
 player:
   entities:
     - media_player.mpd

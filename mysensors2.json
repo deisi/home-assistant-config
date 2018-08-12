@@ -1,1 +1,140 @@
-{"0": {"sensor_id": 0, "children": {}, "type": 18, "sketch_name": null, "sketch_version": null, "battery_level": 0, "protocol_version": "2.1.1"}, "1": {"sensor_id": 1, "children": {"200": {"id": 200, "type": 23, "description": "", "values": {}}, "1": {"id": 1, "type": 6, "description": "", "values": {"0": "27.0", "16": "0"}}, "2": {"id": 2, "type": 3, "description": "", "values": {"2": "0"}}}, "type": 17, "sketch_name": "Klingel", "sketch_version": "1.0", "battery_level": 0, "protocol_version": "2.2.0"}, "2": {"sensor_id": 2, "children": {"1": {"id": 1, "type": 16, "description": "LDR", "values": {"23": "97"}}, "2": {"id": 2, "type": 6, "description": "DHT11", "values": {"0": "16.50"}}, "3": {"id": 3, "type": 7, "description": "DHT11", "values": {"1": "81.20"}}, "4": {"id": 4, "type": 6, "description": "BMP180", "values": {"0": "124.20"}}, "5": {"id": 5, "type": 8, "description": "BMP180", "values": {"4": "393.51"}}, "6": {"id": 6, "type": 8, "description": "BMP180", "values": {"5": "stable"}}, "7": {"id": 7, "type": 22, "description": "SDS011", "values": {"37": "13.60"}}, "8": {"id": 8, "type": 22, "description": "SDS011", "values": {"37": "10.00"}}}, "type": 17, "sketch_name": "MyMultisensor", "sketch_version": "1.0", "battery_level": 0, "protocol_version": "2.2.0"}}
+{
+    "0": {
+        "sensor_id": 0,
+        "children": {},
+        "type": 18,
+        "sketch_name": null,
+        "sketch_version": null,
+        "battery_level": 0,
+        "protocol_version": "2.1.1",
+        "heartbeat": 0
+    },
+    "1": {
+        "sensor_id": 1,
+        "children": {
+            "200": {
+                "id": 200,
+                "type": 23,
+                "description": "",
+                "values": {}
+            },
+            "1": {
+                "id": 1,
+                "type": 6,
+                "description": "",
+                "values": {
+                    "0": "31.5",
+                    "16": "0"
+                }
+            },
+            "2": {
+                "id": 2,
+                "type": 3,
+                "description": "",
+                "values": {
+                    "2": "0"
+                }
+            }
+        },
+        "type": 17,
+        "sketch_name": "Relay",
+        "sketch_version": "1.0",
+        "battery_level": 0,
+        "protocol_version": "2.2.0",
+        "heartbeat": 0
+    },
+    "2": {
+        "sensor_id": 2,
+        "children": {
+            "1": {
+                "id": 1,
+                "type": 16,
+                "description": "LDR",
+                "values": {
+                    "23": "0"
+                }
+            },
+            "2": {
+                "id": 2,
+                "type": 6,
+                "description": "DHT11",
+                "values": {
+                    "0": "23.90"
+                }
+            },
+            "3": {
+                "id": 3,
+                "type": 7,
+                "description": "DHT11",
+                "values": {
+                    "1": "52.90"
+                }
+            },
+            "4": {
+                "id": 4,
+                "type": 6,
+                "description": "BMP180",
+                "values": {
+                    "0": "124.30"
+                }
+            },
+            "5": {
+                "id": 5,
+                "type": 8,
+                "description": "BMP180",
+                "values": {
+                    "4": "368.18"
+                }
+            },
+            "6": {
+                "id": 6,
+                "type": 8,
+                "description": "BMP180",
+                "values": {
+                    "5": "stable"
+                }
+            },
+            "7": {
+                "id": 7,
+                "type": 22,
+                "description": "SDS011",
+                "values": {
+                    "37": "3.10"
+                }
+            },
+            "8": {
+                "id": 8,
+                "type": 22,
+                "description": "SDS011",
+                "values": {
+                    "37": "1.60"
+                }
+            }
+        },
+        "type": 17,
+        "sketch_name": "MyMultisensor",
+        "sketch_version": "1.0",
+        "battery_level": 0,
+        "protocol_version": "2.2.0",
+        "heartbeat": 0
+    },
+    "3": {
+        "sensor_id": 3,
+        "children": {
+            "1": {
+                "id": 1,
+                "type": 11,
+                "description": "ML8511",
+                "values": {
+                    "11": "-4.85"
+                }
+            }
+        },
+        "type": null,
+        "sketch_name": "UV-Sensor",
+        "sketch_version": "1.0",
+        "battery_level": 0,
+        "protocol_version": "1.4",
+        "heartbeat": 0
+    }
+}

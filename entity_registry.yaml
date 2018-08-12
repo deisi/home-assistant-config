@@ -1,312 +1,570 @@
 light.kueche2:
+  config_entry_id:
   name:
   platform: hue
   unique_id: 00:17:88:01:00:f5:dc:75-0b
 light.stehlampe:
+  config_entry_id:
   name:
   platform: hue
   unique_id: 00:17:88:01:00:e3:99:c7-0b
 sensor.everspring_st812_flood_detector_alarm_type:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594127859713
 sensor.everspring_st812_flood_detector_alarm_level:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594127859729
 sensor.everspring_st812_flood_detector_flood:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 5-72057594128564305
 sensor.multisensor_temperature:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 6-72057594143588370
 sensor.multisensor_luminance:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 6-72057594143588402
 binary_sensor.multisensor_sensor:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 6-72057594143571968
 sensor.multisensor_general:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 6-72057594145341441
 switch.anlage_switch:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 7-72057594160168960
 sensor.anlage_power:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 7-72057594160365634
 sensor.anlage_velocity:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 7-72057594160365666
 sensor.anlage_energy:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 7-72057594160381954
 sensor.anlage_power_2:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 7-72057594160382082
 sensor.anlage_exporting:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 7-72057594160382464
 sensor.heizung0_temperature:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 8-72057594177142802
 climate.heizung0_cooling_1:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 8-72057594177437730
 climate.heizung0_dry_air:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 8-72057594177437826
 sensor.heizung0_alarm_type:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 8-72057594178191361
 sensor.heizung0_alarm_level:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 8-72057594178191377
 sensor.heizung0_sourcenodeid:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 8-72057594178191393
 sensor.heizung0_power_management:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 8-72057594178191537
 sensor.heizung0_system:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 8-72057594178191553
 sensor.heizung1_temperature:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 9-72057594193920018
 climate.heizung1_cooling_1:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 9-72057594194214946
 climate.heizung1_dry_air:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 9-72057594194215042
 sensor.heizung1_alarm_type:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 9-72057594194968577
 sensor.heizung1_alarm_level:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 9-72057594194968593
 sensor.heizung1_sourcenodeid:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 9-72057594194968609
 sensor.heizung1_power_management:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 9-72057594194968753
 sensor.heizung1_system:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 9-72057594194968769
 sensor.heizung_broken_temperature:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 10-72057594210697234
 climate.heizung_broken_cooling_1:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 10-72057594210992162
 climate.heizung_broken_dry_air:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 10-72057594210992258
 sensor.heizung_broken_alarm_type:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 10-72057594211745793
 sensor.heizung_broken_alarm_level:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 10-72057594211745809
 sensor.heizung_broken_sourcenodeid:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 10-72057594211745825
 sensor.heizung_broken_power_management:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 10-72057594211745969
 sensor.heizung_broken_system:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 10-72057594211745985
 sensor.heizung2_temperature:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 11-72057594227474450
 climate.heizung2_cooling_1:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 11-72057594227769378
 climate.heizung2_dry_air:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 11-72057594227769474
 sensor.heizung2_alarm_type:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 11-72057594228523009
 sensor.heizung2_alarm_level:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 11-72057594228523025
 sensor.heizung2_sourcenodeid:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 11-72057594228523041
 sensor.heizung2_power_management:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 11-72057594228523185
 sensor.heizung2_system:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 11-72057594228523201
 sensor.unknown:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-72057594244268034
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_unknown:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-144115188282195970
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_unknown_2:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-216172782320123906
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_unknown_3:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-288230376358051842
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-72057594244268162
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_voltage:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-72057594244268290
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_current:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-72057594244268354
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power_2:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-144115188282196098
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_voltage_2:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-144115188282196226
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_current_2:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-144115188282196290
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power_3:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-216172782320124034
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_voltage_3:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-216172782320124162
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_current_3:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-216172782320124226
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_power_4:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-288230376358051970
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_voltage_4:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-288230376358052098
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_current_4:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-288230376358052162
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-72057594244268050
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading_2:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-144115188282195986
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading_3:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-216172782320123922
 sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading_4:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-288230376358051858
 media_player.chromecast:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 8603626b-67e9-4644-6f3d-876869b657fb
 sensor.energy_meter_previous_reading:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 12-72057594244268178
 sensor.multisensor_power:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 6-72057594143588418
 sensor.alarm_type:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 13-72057594262077441
 sensor.alarm_level:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 13-72057594262077457
 sensor.eurotronic_unknown_type0003_id0001_temperature:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 13-72057594261028882
 climate.eurotronic_unknown_type0003_id0001_cooling_1:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 13-72057594261323810
 climate.eurotronic_unknown_type0003_id0001_dry_air:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 13-72057594261323906
 sensor.eurotronic_unknown_type0003_id0001_sourcenodeid:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 13-72057594262077473
 sensor.eurotronic_unknown_type0003_id0001_power_management:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 13-72057594262077617
 sensor.eurotronic_unknown_type0003_id0001_system:
+  config_entry_id:
   name:
   platform: zwave
   unique_id: 13-72057594262077633
+media_player.snapcast_group_1eeabaa8bb99084de973ff220f71d872:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_1eeabaa8-bb99-084d-e973-ff220f71d872
+media_player.snapcast_group_76865c12e8c40dbb5c8d24a142333a39:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_76865c12-e8c4-0dbb-5c8d-24a142333a39
+media_player.snapcast_client_fd418a3586c64c6eaa401ee8a8c74edc:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_fd418a3586c64c6eaa401ee8a8c74edc
+media_player.snapcast_client_408d5ceb9206:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_40:8d:5c:eb:92:06
+media_player.snapcast_group_f9563bd1ad05897916e565ec95cfa1c0:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_f9563bd1-ad05-8979-16e5-65ec95cfa1c0
+media_player.snapcast_group_462d0eaeebd02a7462fdf6f15d4b6325:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_462d0eae-ebd0-2a74-62fd-f6f15d4b6325
+media_player.snapcast_client_32303c8a29d3:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_32:30:3c:8a:29:d3
+media_player.snapcast_client_b827eb71560e:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_b8:27:eb:71:56:0e
+media_player.snapcast_group_8003ecad1d4a161b592d123897e6361a:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_8003ecad-1d4a-161b-592d-123897e6361a
+media_player.snapcast_group_210fd117e89a36fbfbee236f72827518:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_210fd117-e89a-36fb-fbee-236f72827518
+media_player.snapcast_client_94652dc361e2:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_94:65:2d:c3:61:e2
+media_player.snapcast_group_6f2d2cce4414d6d04098397085f95ca5:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_6f2d2cce-4414-d6d0-4098-397085f95ca5
+media_player.snapcast_group_44f676abead0206ef79fae22391b9d29:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_44f676ab-ead0-206e-f79f-ae22391b9d29
+media_player.snapcast_client_222537a1a579:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_22:25:37:a1:a5:79
+media_player.snapcast_client_2a4fcaee11f9:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_2a:4f:ca:ee:11:f9
+media_player.snapcast_client_843a4b990430:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_84:3a:4b:99:04:30
+media_player.snapcast_client_322b5417565b:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_32:2b:54:17:56:5b
+media_player.snapcast_client_26326dba9da8:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_26:32:6d:ba:9d:a8
+media_player.snapcast_group_2e104f44808fcbe82bd08504bdca8291:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_2e104f44-808f-cbe8-2bd0-8504bdca8291
+media_player.snapcast_client_1ea59c8146fa:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_1e:a5:9c:81:46:fa
+media_player.snapcast_group_fecb05ef4e6816fe6186af984bde4a9d:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_fecb05ef-4e68-16fe-6186-af984bde4a9d
+media_player.snapcast_group_d7527a09802e35ebc7b7f58ae82a7a61:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_d7527a09-802e-35eb-c7b7-f58ae82a7a61
+media_player.snapcast_client_16b38258a170:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_16:b3:82:58:a1:70
+media_player.snapcast_group_a8ca35a233df8755bc8eb7c4c3df5449:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_a8ca35a2-33df-8755-bc8e-b7c4c3df5449
+media_player.snapcast_client_324e5d1090a2:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_32:4e:5d:10:90:a2
+media_player.snapcast_group_15835bb4e842ff3d1b681c92fb9b5e4a:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_15835bb4-e842-ff3d-1b68-1c92fb9b5e4a
+zwave.aeotec_dsa02203_zstick_s2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-1
+zwave.everspring_st812_flood_detector:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-5
+zwave.multisensor:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-6
+zwave.anlage:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-7
+zwave.heizung0:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-8
+zwave.heizung2:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-11
+zwave.energy_meter:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-12
+zwave.heizung1:
+  config_entry_id:
+  name:
+  platform: zwave
+  unique_id: node-13
+media_player.snapcast_client_1e8eb7f5f8e2:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_1e:8e:b7:f5:f8:e2
+media_player.snapcast_group_974c9eb9733ac94f329e7b620ee99815:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_974c9eb9-733a-c94f-329e-7b620ee99815
