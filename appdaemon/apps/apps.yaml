@@ -1,0 +1,20 @@
+#hello_world:
+#  module: hello
+#  class: HelloWorld
+
+DaHause:
+  module: dahause
+  class: DaHause
+  people: group.people
+  switches_off: switch.anlage_switch
+  switches_on: switch.anlage_switch
+  mediaplayer_off: group.mediaplayer
+  heizung_on: group.heizung
+  heizung_off: group.heizung
+  heizung_min_val: 12
+
+DaLicht:
+  module: dalicht
+  class: DaLicht
+  people: group.people
+
