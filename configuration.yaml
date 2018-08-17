@@ -153,22 +153,25 @@ device_tracker:
 sensor: !include sensors.yaml
 
 media_player:
-- platform: kodi
-  host: serv
-  port: 8080
-  name: kodi_serv
-- platform: mpd
-  host: serv
-  port: 6600
-  location: living_room
-- platform: snapcast
-  host: serv
-- platform: spotify
-  client_id: !secret ha_spotify_client_id
-  client_secret: !secret ha_spotify_client_secret
-#- platform: acer_projector
-#  filename: /dev/beamer
-#  name: Beamer
+  - platform: kodi
+    host: serv
+    port: 8080
+    name: kodi_serv
+  - platform: mpd
+    host: serv
+    port: 6600
+    location: living_room
+  - platform: snapcast
+    host: serv
+  - platform: spotify
+    client_id: !secret ha_spotify_client_id
+    client_secret: !secret ha_spotify_client_secret
+  - platform: denonavr
+    host: 172.16.1.37
+    name: denon
+  #- platform: acer_projector
+  #  filename: /dev/beamer
+  #  name: Beamer
 
 climate:
   - platform: zwave

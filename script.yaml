@@ -3,6 +3,8 @@ home_left:
   sequence:
     - service: switch.turn_off
       entity_id: switch.anlage_switch
+    - service: media_player.turn_off
+      entity_id: media_player.denon
     - service: climate.set_operation_mode
       data:
         entity_id: group.heizung
@@ -19,6 +21,12 @@ home_left:
 fehrnsehn:
   alias: Fehrnsehn
   sequence:
+    - service: media_player.turn_on
+      entity_id: media_player.denon
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.denon
+        source: CBL/SAT
     - service: light.turn_off
       entity_id: light.wohnzimmer
     - service: switch.turn_on
@@ -41,11 +49,24 @@ sleep:
 radio_music:
   alias: Play Radio
   sequence:
+  - service: media_player.turn_on
+    data:
+      entity_id: media_player.denon
+  - service: media_player.select_source
+    data:
+      entity_id: media_player.denon
+      source: CD
   - service: media_player.play_media
     data:
       entity_id: media_player.mpd
       media_content_type: playlist
       media_content_id: radio1
+  - delay:
+      seconds: 4
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.denon
+      volume_level: 0.6
 
 wakeup: 
   alias: Aufwecken

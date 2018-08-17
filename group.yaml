@@ -114,6 +114,7 @@ player:
     - media_player.mpd
     - media_player.kodi_serv
     - media_player.spotify
+    - media_player.denon
 outside:
   name: Draußen
   entities:
@@ -252,6 +253,7 @@ default_view:
     - media_player.spotify
     - media_player.beamer
     - media_player.buro_2
+    - media_player.denon
     - sensor.in_wall_sensor_00_10_1
     - switch.in_wall_sensor_00_10_2
     - configurator.philips_hue

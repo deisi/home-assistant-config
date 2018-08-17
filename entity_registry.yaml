@@ -1,10 +1,10 @@
 light.kueche2:
-  config_entry_id:
+  config_entry_id: 5682da23f7e34e8880ce12346dd98b14
   name:
   platform: hue
   unique_id: 00:17:88:01:00:f5:dc:75-0b
 light.stehlampe:
-  config_entry_id:
+  config_entry_id: 5682da23f7e34e8880ce12346dd98b14
   name:
   platform: hue
   unique_id: 00:17:88:01:00:e3:99:c7-0b
@@ -334,7 +334,7 @@ sensor.aeotec_dsb28_home_energy_meter_2nd_edition_previous_reading_4:
   platform: zwave
   unique_id: 12-288230376358051858
 media_player.chromecast:
-  config_entry_id:
+  config_entry_id: 61b54cd5fe974f60b03e3c40d1e9aa40
   name:
   platform: cast
   unique_id: 8603626b-67e9-4644-6f3d-876869b657fb
@@ -568,3 +568,23 @@ media_player.snapcast_group_974c9eb9733ac94f329e7b620ee99815:
   name:
   platform: snapcast
   unique_id: snapcast_group_serv:1705_974c9eb9-733a-c94f-329e-7b620ee99815
+media_player.snapcast_client_061d8187307b:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_06:1d:81:87:30:7b
+media_player.snapcast_group_e7faf16c4633573a927e884a26ef0482:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_e7faf16c-4633-573a-927e-884a26ef0482
+media_player.snapcast_group_cd51df61f692184d883d39f809c77d32:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_group_serv:1705_cd51df61-f692-184d-883d-39f809c77d32
+media_player.snapcast_client_5254006a7c50:
+  config_entry_id:
+  name:
+  platform: snapcast
+  unique_id: snapcast_client_serv:1705_52:54:00:6a:7c:50

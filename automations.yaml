@@ -39,15 +39,15 @@
   alias: Music Playing
   trigger:
   - platform: state
-    entity_id: media_player.kodi_rapi3
-    to: playing
-  - platform: state
     entity_id: media_player.mpd
     to: playing
   action:
   - data:
       entity_id: switch.anlage_switch
     service: switch.turn_on
+  - data:
+      entity_id: media_player.denon
+    service: media_player.turn_on
 - id: ttmd
   alias: Train to mainz delayed
   hide_entity: true

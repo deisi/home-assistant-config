@@ -38,8 +38,10 @@
     event_data:
       key_code: 108
   action:
-    service: switch.turn_on
-    entity_id: switch.anlage_switch
+    - service: switch.turn_on
+      entity_id: switch.anlage_switch
+    - service: media_player.turn_on
+      entity_id: media_player.denon
 
 - alias: Keyboard Hifi off
   hide_entity: True
@@ -53,6 +55,8 @@
       entity_id: switch.anlage_switch
     - service: media_player.media_pause
       entity_id: media_player.mpd
+    - service: media_player.turn_off
+      entity_id: media_player.denon
 
 - alias: Keyboard play 1live
   hide_entity: True
@@ -105,7 +109,7 @@
       key_code: 78
   action:
     service: media_player.volume_up
-    entity_id: media_player.mpd
+    entity_id: media_player.denon
 
 - alias: keyboard media player lower volume
   hide_entity: True
@@ -116,7 +120,7 @@
       key_code: 74
   action:
     service: media_player.volume_down
-    entity_id: media_player.mpd
+    entity_id: media_player.denon
 
 - alias: keyboard media player next track
   hide_entity: True
