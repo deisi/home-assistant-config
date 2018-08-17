@@ -1,9 +1,5 @@
 - name: Morning
   entities:
-    media_player.mpd:
-      volume_level: 0.50
-    media_player.snapcast_client_fd418a3586c64c6eaa401ee8a8c74edc:
-      volume_level: 0.50
     group.licht:
       state: on
       color_temp: 181

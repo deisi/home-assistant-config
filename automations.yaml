@@ -22,32 +22,43 @@
   - data:
       entity_id: script.movement_detected
     service: script.turn_on
-- id: tv_beats_radio
-  alias: TV beats Radio
+- id: mpd_playing
+  alias: MPD Playing
   trigger:
     platform: state
-    entity_id: media_player.serv
-    to: playing
-  action:
-  - data:
-      entity_id: media_player.mpd
-    service: media_player.media_pause
-  - data:
-      entity_id: media_player.spotify
-    service: media_player.media_pause
-- id: music_playing
-  alias: Music Playing
-  trigger:
-  - platform: state
     entity_id: media_player.mpd
     to: playing
   action:
-  - data:
-      entity_id: switch.anlage_switch
-    service: switch.turn_on
-  - data:
+  - service: switch.turn_on
+    entity_id: switch.anlage_switch
+  - service: media_player.turn_on
+    entity_id: media_player.denon
+  - service: media_player.select_source
+    data:
       entity_id: media_player.denon
-    service: media_player.turn_on
+      source: CD
+- id: spotify_playing
+  alias: spotify Playing
+  trigger:
+    platform: state
+    entity_id: media_player.spotify
+    to: playing
+  condition:
+    condition: or
+    conditions:
+      - condition template:
+          value_template: {{ states.media_player.spotify.attributes.source == 'Maltes Echo Dot'}}
+      - condition_templates:
+          value_template: {{ states.media_player.spotify.attributes.source == 'serv'}}
+  action:
+  - service: switch.turn_on
+    entity_id: switch.anlage_switch
+  - service: media_player.turn_on
+    entity_id: media_player.denon
+  - service: media_player.select_source
+    data:
+      entity_id: media_player.denon
+      source: CD
 - id: ttmd
   alias: Train to mainz delayed
   hide_entity: true

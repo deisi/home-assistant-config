@@ -49,24 +49,11 @@ sleep:
 radio_music:
   alias: Play Radio
   sequence:
-  - service: media_player.turn_on
-    data:
-      entity_id: media_player.denon
-  - service: media_player.select_source
-    data:
-      entity_id: media_player.denon
-      source: CD
   - service: media_player.play_media
     data:
       entity_id: media_player.mpd
       media_content_type: playlist
       media_content_id: radio1
-  - delay:
-      seconds: 4
-  - service: media_player.volume_set
-    data:
-      entity_id: media_player.denon
-      volume_level: 0.6
 
 wakeup: 
   alias: Aufwecken
@@ -79,6 +66,12 @@ wakeup:
       service: script.turn_on
       data:
         entity_id: script.radio_music
+    - delay:
+        seconds: 4
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.denon
+        volume_level: 0.6
     - alias: Turn on Boiler
       service: switch.turn_off
       data:
