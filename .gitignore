@@ -22,3 +22,11 @@ www*
 options.xml
 mysensors0.json
 phue-*.conf
+/.mysensors2.json.swp
+/appdaemon/compiled
+/.storage/auth
+/.storage/core.config_entries
+/.storage/hassio
+/custom_components/media_player/mqtt_serial_media_player.py
+/custom_components/switch/flux.py
+/mysensors2.json
