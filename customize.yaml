@@ -54,60 +54,24 @@ binary_sensor.binary_sensor_1_4:
   friendly_name: "Balkont\xFCr"
 media_player.mpd:
   friendly_name: Musik Box
-  emulated_hue_hidden: false
-media_player.kodi_rapi3:
-  friendly_name: TV
-  emulated_hue_hidden: false
-media_player.spotify:
-  emulated_hue_hidden: false
-media_player.beamer:
-  emulated_hue_hidden: false
-scene.morning:
-  emulated_hue_hidden: false
-script.fehrnsehn:
-  emulated_hue_hidden: false
 script.random_color:
   friendly_name: "Zuf\xE4llige Farbe Alle"
-  emulated_hue_hidden: false
 script.random_color1:
   friendly_name: "Zuf\xE4llige Farbe"
-  emulated_hue_hidden: false
 script.sleep:
-  emulated_hue_hidden: false
+  friendly_name: Gute Nacht
 script.wakeup:
-  emulated_hue_hidden: false
+  friendly_name: Guten Morgen
 light.beamer:
   friendly_name: Leinwand
-  emulated_hue_hidden: false
-light.esszimmer:
-  emulated_hue_hidden: false
-light.lightify:
-  emulated_hue_hidden: false
-light.ofen:
-  emulated_hue_hidden: false
-light.stehlampe:
-  emulated_hue_hidden: false
-light.wohnzimmer:
-  emulated_hue_hidden: false
-switch.kompensator:
-  emulated_hue_hidden: false
 switch.anlage_switch:
   icon: mdi:speaker
-  emulated_hue_hidden: false
   friendly_name: Anlage
 switch.gaming_pc:
-  emulated_hue_hidden: false
   friendly_name: Spielekiste
   icon: mdi:desktop-tower
 switch.beamer:
-  emulated_hue_hidden: false
   icon: mdi:projector
-group.kueche:
-  emulated_hue_hidden: false
-group.licht:
-  emulated_hue_hidden: false
-group.schalter:
-  emulated_hue_hidden: true
 binary_sensor.binary_switch_doorbell_se_1_1:
   friendly_name: Klingel
   icon: mdi:bell
@@ -140,3 +104,5 @@ media_player.snapcast_client_fd418a3586c64c6eaa401ee8a8c74edc:
   friendly_name: Serv Snapcast
 media_player.snapcast_client_b827eb71560e:
   friendly_name: Rapi2 Snapcast
+script.home_left:
+  friendly_name: Auf Wiedersehen

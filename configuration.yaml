@@ -50,16 +50,6 @@ recorder:
       - group
       - zone
       - zwave
-  #include:
-  #  domains:
-  #    - device_tracker
-  #    - binary_sensor
-  #    - light
-  #    - media_player
-  #    - sensor
-  #    - switch
-  #    - sun
-  #    - climate
 
 influxdb:
   host: serv
@@ -111,6 +101,43 @@ mysensors:
 emulated_hue:
   host_ip: 172.16.1.10
   expose_by_default: false
+  entities:
+    script.fehrnsehn:
+      hidden: false
+    script.random_color:
+      hidden: false
+    script.random_color1:
+      hidden: false
+    script.sleep:
+      hidden: false
+    script.wakeup:
+      hidden: false
+    script.home_left:
+      hidden: false
+    light.beamer:
+      hidden: false
+    light.esszimmer:
+      hidden: false
+    light.lightify:
+      hidden: false
+    light.ofen:
+      hidden: false
+    light.stehlampe:
+      hidden: false
+    light.wohnzimmer:
+      hidden: false
+    switch.anlage_switch:
+      hidden: false
+    switch.beamer:
+      hidden: false
+    group.kueche:
+      hidden: false
+    group.licht:
+      hidden: false
+    group.schalter:
+      hidden: true
+    media_player.denon:
+      hidden: false
   
 hue:
   bridges:
