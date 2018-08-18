@@ -20,10 +20,10 @@
     service: media_player.media_pause
   - condition: or
     conditions:
-      - condition template:
-          value_template: {{ states.media_player.spotify.attributes.source == 'Maltes Echo Dot'}}
-      - condition_templates:
-          value_template: {{ states.media_player.spotify.attributes.source == 'serv'}}
+      - condition: template
+        value_template: "{{ is_state_attr('media_player.spotify', 'source', 'Maltes Echo Dot')}}"
+      - condition: template
+        value_template: "{{ is_state_attr('media_player.spotify', 'source', 'serv')}}"
   - data:
       entity_id: media_player.spotify
     service: media_player.media_pause
@@ -51,10 +51,10 @@
   condition:
     condition: or
     conditions:
-      - condition template:
-          value_template: {{ states.media_player.spotify.attributes.source == 'Maltes Echo Dot'}}
-      - condition_templates:
-          value_template: {{ states.media_player.spotify.attributes.source == 'serv'}}
+      - condition: template
+        value_template: "{{ is_state_attr('media_player.spotify', 'source', 'Maltes Echo Dot')}}"
+      - condition: template
+        value_template: "{{ is_state_attr('media_player.spotify', 'source', 'serv')}}"
   action:
   - service: switch.turn_on
     entity_id: switch.anlage_switch

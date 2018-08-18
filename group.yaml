@@ -27,7 +27,8 @@ automations:
     - automation.home_left
     - automation.beamer_on
     - automation.movement_detected
-    - automation.music_playing
+    - automation.mpd_playing
+    - automation.spotify_playing
     - automation.tv_beats_radio
     - automation.wake_up_0600
     - automation.wake_up_0658
