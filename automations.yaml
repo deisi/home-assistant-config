@@ -8,20 +8,25 @@
   - data:
       entity_id: script.fehrnsehn
     service: script.turn_on
-- id: movement_detected
-  alias: Movement Detected
+- id: tv_beats_radio
+  alias: TV beats Radio
   trigger:
     platform: state
-    entity_id: binary_sensor.multisensor_sensor
-    to: 'on'
-  condition:
-  - condition: state
-    entity_id: group.people
-    state: not_home
+    entity_id: media_player.serv
+    to: playing
   action:
   - data:
-      entity_id: script.movement_detected
-    service: script.turn_on
+      entity_id: media_player.mpd
+    service: media_player.media_pause
+  - condition: or
+    conditions:
+      - condition template:
+          value_template: {{ states.media_player.spotify.attributes.source == 'Maltes Echo Dot'}}
+      - condition_templates:
+          value_template: {{ states.media_player.spotify.attributes.source == 'serv'}}
+  - data:
+      entity_id: media_player.spotify
+    service: media_player.media_pause
 - id: mpd_playing
   alias: MPD Playing
   trigger:
@@ -59,6 +64,20 @@
     data:
       entity_id: media_player.denon
       source: CD
+- id: movement_detected
+  alias: Movement Detected
+  trigger:
+    platform: state
+    entity_id: binary_sensor.multisensor_sensor
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: group.people
+    state: not_home
+  action:
+  - data:
+      entity_id: script.movement_detected
+    service: script.turn_on
 - id: ttmd
   alias: Train to mainz delayed
   hide_entity: true
