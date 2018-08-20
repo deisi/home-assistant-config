@@ -1,14 +1,10 @@
-home_left:
-  alias: Tschüss
+sleep:
+  alias: Gute Nacht
   sequence:
     - service: switch.turn_off
       entity_id: switch.anlage_switch
     - service: media_player.turn_off
       entity_id: media_player.denon
-    - service: climate.set_operation_mode
-      data:
-        entity_id: group.heizung
-        operation_mode: "Off"
     - service: light.turn_off
       entity_id: group.licht
     - service: media_player.media_pause
@@ -26,6 +22,15 @@ home_left:
     - service: media_player.media_pause
       entity_id: media_player.spotify
 
+home_left:
+  alias: Tschüss
+  sequence:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: group.heizung
+        operation_mode: "Off"
+    - service: script.turn_on
+      entity_id: script.sleep
 
 fehrnsehn:
   alias: Fehrnsehn
@@ -43,18 +48,6 @@ fehrnsehn:
     - service: switch.turn_on
       entity_id: switch.beamer
 
-sleep:
-  alias: Gut Nacht
-  sequence:
-    - alias: Pause media player
-      service: media_player.media_pause
-      entity_id: group.player
-    - alias: Turn off HIFI
-      service: switch.turn_off
-      entity_id: switch.anlage_switch
-    - alias: Turn off light
-      service: light.turn_off
-
 radio_music:
   alias: Radio
   sequence:
@@ -67,6 +60,9 @@ radio_music:
 wakeup: 
   alias: Aufwecken
   sequence:
+    - alias: Turn on Denon
+      service: media_player.turn_on
+      entity_id: media_player.denon
     - alias: Set Scene
       service: scene.turn_on
       data:
@@ -80,7 +76,7 @@ wakeup:
     - service: media_player.volume_set
       data:
         entity_id: media_player.denon
-        volume_level: 0.6
+        volume_level: 0.45
     - alias: Turn on Boiler
       service: switch.turn_off
       data:
