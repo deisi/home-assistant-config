@@ -27,6 +27,21 @@
   - data:
       entity_id: media_player.spotify
     service: media_player.media_pause
+- id: chromecast_playing
+  alias: Chromecast Playing
+  trigger:
+    platform: state
+    entity_id: media_player.chromecast
+    to: playing
+  action:
+  - service: switch.turn_on
+    entity_id: switch.anlage_switch
+  - service: media_player.turn_on
+    entity_id: media_player.denon
+  - service: media_player.select_source
+    data:
+      entity_id: media_player.denon
+      source: Media Player
 - id: mpd_playing
   alias: MPD Playing
   trigger:
