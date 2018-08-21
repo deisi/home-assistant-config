@@ -244,3 +244,13 @@
   trigger:
   - at: 09:30:00
     platform: time
+- id: sun up
+  action:
+  - entity_id: light.lightify
+    service: light.turn_off
+  trigger:
+    entity_id: sensor.mymultisensor_2_1
+    platform: numeric_state
+    above: 30
+    for:
+      minutes: 15

@@ -8,7 +8,7 @@ class DaLicht(hass.Hass):
 
     def initialize(self):
         self.run_at_sunset(self.on_sunset, offset=-900)
-        self.run_at_sunrise(self.on_sunrise, offset=900)
+        #self.run_at_sunrise(self.on_sunrise, offset=900)
 
     def on_sunset(self, kwargs):
         self.log("on_sunset called")
