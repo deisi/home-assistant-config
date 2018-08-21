@@ -37,16 +37,24 @@ fehrnsehn:
   sequence:
     - service: media_player.turn_on
       entity_id: media_player.denon
-    - service: media_player.select_source
-      data:
-        entity_id: media_player.denon
-        source: CBL/SAT
     - service: light.turn_off
       entity_id: light.wohnzimmer
     - service: switch.turn_on
       entity_id: switch.anlage_switch
     - service: switch.turn_on
       entity_id: switch.beamer
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: media_player.chromecast
+          state: "off"
+        - condition: state
+          entity_id: media_player.chromecast
+          state: paused
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.denon
+        source: CBL/SAT
 
 radio_music:
   alias: Radio
@@ -63,10 +71,6 @@ wakeup:
     - alias: Turn on Denon
       service: media_player.turn_on
       entity_id: media_player.denon
-    - alias: Set Scene
-      service: scene.turn_on
-      data:
-        entity_id: scene.morning
     - alias: Turn on Radio
       service: script.turn_on
       data:
@@ -81,6 +85,18 @@ wakeup:
       service: switch.turn_off
       data:
         entity_id: switch.relay_1_2
+    - condition: and
+      conditions:
+        #- condition: sun
+        #  before: sunrise
+        #  before_offset: "01:00:00"
+        - condition: numeric_state
+          entity_id:  sensor.mymultisensor_2_1
+          below: 50
+    - alias: Set Scene
+      service: scene.turn_on
+      data:
+        entity_id: scene.morning
     - delay:
         seconds: 10
     - alias: Transition lights
